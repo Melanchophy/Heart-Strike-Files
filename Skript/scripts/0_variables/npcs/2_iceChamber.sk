@@ -1,0 +1,27 @@
+on load:
+	set {_npc} to "Dorun"
+	clear {i::npc::%{_npc}%::*}
+	add "Sorry? This area is off limits." to {i::npc::%{_npc}%::dialogue::*}
+	add "Nuh-uh." to {i::npc::%{_npc}%::dialogue::*}
+
+	add "entity.villager.celebrate" to {i::npc::%{_npc}%::talksound::*}
+	add "entity.villager.ambient" to {i::npc::%{_npc}%::talksound::*}
+
+	add "heartstrike:npc/dorun/forbidden" to {i::npc::%{_npc}%::talksoundRP::*}
+	add "heartstrike:npc/dorun/no" to {i::npc::%{_npc}%::talksoundRP::*}
+
+	set {_npc} to "Nuju"
+	clear {i::npc::%{_npc}%::*}
+	add "NPCs are quite the hastle to program. Aren't they?" to {i::npc::%{_npc}%::dialogue::*}
+	add "Heyo. I'm just doing nothing. Oh? That name tag there says you're <player>? That's a pretty name." to {i::npc::%{_npc}%::dialogue::*}
+
+	add "entity.villager.celebrate" to {i::npc::%{_npc}%::talksound::*}
+	add "entity.villager.ambient" to {i::npc::%{_npc}%::talksound::*}
+
+	set {_npc} to "Nala"
+	clear {i::npc::%{_npc}%::*}
+	add "Hey, be careful here, alright?" to {i::npc::%{_npc}%::dialogue::*}
+	add "You aren't from around here are you? Be careful..." to {i::npc::%{_npc}%::dialogue::*}
+
+	add "entity.villager.celebrate" to {i::npc::%{_npc}%::talksound::*}
+	add "entity.villager.ambient" to {i::npc::%{_npc}%::talksound::*}

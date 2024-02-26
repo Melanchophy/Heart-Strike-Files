@@ -1,0 +1,45 @@
+on load:
+	clear {i::randomMessages::*}
+	add "Is a group of sniffers is called a whiff?" to {i::randomMessages::*}
+	add "This server only uses 16 plugins!" to {i::randomMessages::*}
+	add "Drink water!" to {i::randomMessages::*}
+	add "Don't forget to take a break!" to {i::randomMessages::*}
+	add "Don't forget to OwO?" to {i::randomMessages::*}
+	add "This server is free and open source! Check out the Github page." to {i::randomMessages::*}
+	add "Also try Terraria!" to {i::randomMessages::*}
+	add "Also try Omori!" to {i::randomMessages::*}
+	add "Also try ULTRAKILL!" to {i::randomMessages::*}
+	add "Also try Megido:Abyss!" to {i::randomMessages::*}
+	add "Also try Monumenta!" to {i::randomMessages::*}
+	add "Joe Biden. Joe Biden." to {i::randomMessages::*}
+	add "I forgor what I was supposed to say." to {i::randomMessages::*}
+	add "I forgor what I was supposed to say." to {i::randomMessages::*}
+	add "ooOOoo, you like kissing bricks don't you? You're a br- &7&o*a brick flies into the server and a distant voice yells ""Shut up and eat this brick!""*" to {i::randomMessages::*}
+	add "Here be dragons..." to {i::randomMessages::*}
+	add "Rest In Peace Technoblade." to {i::randomMessages::*}
+	add "Rest In Peace Ginge." to {i::randomMessages::*}
+	add "Would you press the button?" to {i::randomMessages::*}
+	add "Lumen's river has space bending properties. There may be more like it." to {i::randomMessages::*}
+	add "Just because you're in the storm doesn't mean the game is over." to {i::randomMessages::*}
+	add "There may be a squad leader but everyone works together to win!" to {i::randomMessages::*}
+	add "Even when you're knocked down, doesn't mean you'll always be down." to {i::randomMessages::*}
+	add "When you hit bedrock, the only way to go is up." to {i::randomMessages::*}
+	add "Anything that is destroyed can be rebuilt!" to {i::randomMessages::*}
+	add "Covid has taken this year, justse outbreak. Is taken more than 100 year. Look, Here's s, alive, s. It's just, isthje. When you think about it." to {i::randomMessages::*}
+	add """Minecraft taught me a man's heart is like bedrock. It can only be broken by cheating. &7&o*Collapses onto the floor*&r"" - Sun Tzu" to {i::randomMessages::*}
+	add "Nothing is impossible, the word itself says ‘I’m possible." to {i::randomMessages::*}
+	add "Just say yes and you’ll figure it out afterwards." to {i::randomMessages::*}
+	add "To keep your balance, you must keep moving." to {i::randomMessages::*}
+	add "Some people look for a beautiful place. Others make a place beautiful." to {i::randomMessages::*}
+	add "Imperfection is beauty and madness is genius." to {i::randomMessages::*}
+	add "True love stories never have endings." to {i::randomMessages::*}
+	add "Messages for cave life part 1. Get Sufficient Sleep." to {i::randomMessages::*}
+	add "Messages for cave life part 2. Exercise Regularly." to {i::randomMessages::*}
+	add "Messages for cave life part 3. Practice Relaxation Techniques." to {i::randomMessages::*}
+	add "Messages for cave life part 4. Learn Your Stressors." to {i::randomMessages::*}
+	add "Messages for cave life part 5. Find a Hobby That Makes You Happy." to {i::randomMessages::*}
+	add "Messages for cave life part 6. Nurture Healthy Relationships.." to {i::randomMessages::*}
+	add "Messages for cave life part 7. Find Sunbrxst." to {i::randomMessages::*}
+
+	# Idk about this one
+	# add "Dashing through the halls! The endless writhing walls! So much fun it is to hear them scream! Oh jingle bells, jungle bells." to {i::randomMessages::*}

@@ -1,0 +1,7 @@
+function cooldown(e: text, t: text, cd: timespan, isHard: boolean) :: boolean:
+	if {e::%{_isHard}%::%{_e}%::%{_t}%} <= now:
+		set {e::%{_isHard}%::%{_e}%::%{_t}%} to {_cd} after now
+		return true
+	else if {e::%{_isHard}%::%{_e}%::%{_t}%} is not set:
+		set {e::%{_isHard}%::%{_e}%::%{_t}%} to {_cd} after now
+		return true

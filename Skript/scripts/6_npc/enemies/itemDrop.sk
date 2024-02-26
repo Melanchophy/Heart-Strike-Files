@@ -1,0 +1,34 @@
+on death:
+	if victim is not player:
+		set {_attackers::*} to {te::victims::%victim's uuid%::attackers::*}
+		set {_attackersDamage::*} to {te::victims::%victim's uuid%::damage::*}
+		loop {_attackers::*}:
+			set {_n} to loop-value
+			
+			moneyGrant(loop-value, ceil({tr::enemy::%uncolored name of victim%::g}*{p::false::%loop-value's uuid%::gold multiplier} /amount of indexes of {_attackers::*}))
+			
+			xpGrant(loop-value, ceil({tr::enemy::%uncolored name of victim%::xp}*{p::false::%loop-value's uuid%::xp multiplier} / amount of indexes of {_attackers::*}))
+			
+			
+			if {tr::enemy::%uncolored name of victim%::dropItem::*} is set:
+				set {_n} to 1
+				loop {tr::enemy::%uncolored name of victim%::dropItem::*}:
+				
+					set {_s} to {_n}th element of {tr::enemy::%uncolored name of victim%::dropchance::*}
+					
+					chance of 1 / ({_s} / (1+{p::false::%loop-value-1's uuid%::scavanger multiplier})):
+						dropItem({_attackers::%loop-index-1%}, uncolored name of {_n}th element of {tr::enemy::%uncolored name of victim%::dropItem::*})
+					add 1 to {_n}
+	
+	clear {te::%victim%::effects::*}
+	clear {te::victims::%victim's uuid%::attackers::*}
+	clear {te::victims::%victim's uuid%::damage::*}
+
+function dropItem(p: entity, i: string):
+	if {_p}'s inventory has space for {i::item::%{_i}%}:
+		give {_p} {i::item::%{_i}%}
+		send "&7You scavenged a %name of {i::item::%{_i}%}%!" to {_p}
+		exit
+	else:
+		send "&7Uh oh, your inventory is full and you dropped a %name of {i::item::%{_i}%}%!" to {_p}
+		drop {i::item::%{_i}%} at {_p}

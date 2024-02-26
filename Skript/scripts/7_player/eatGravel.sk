@@ -1,0 +1,11 @@
+on right click:
+	if player's gamemode is adventure:
+		if custom model data of player's tool is 0:
+			if type of player's tool is not air:
+				send action bar "&0I ate %type of player's tool%" to player
+				play sound "minecraft:entity.generic.eat" with volume 0.5 at player for player
+				make 7 of item particle using type of player's tool at location 0.5 block in front of player's head with offset vector(0.1, 0.1, 0.1) with extra 0
+				remove 1 from item amount of player's tool
+				heal player by 0.5
+				moneyGrant(player, 2)
+				xpGrant(player, 1)

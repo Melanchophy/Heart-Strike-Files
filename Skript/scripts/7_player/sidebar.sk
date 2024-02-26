@@ -1,0 +1,25 @@
+command /sidebar:
+	permission: op
+	trigger:
+		reloadSidebar(player)
+
+function reloadSidebar(p: player):
+	set title of {_p}'s scoreboard to "&4&n[ - &m❤&4&n &lHeart Strike&4&n &m❤&4&n - ]"
+	set line 7 of {_p}'s scoreboard to "&8&o%{_p}'s name%'s Hero"
+
+	# If player has name and/or gender
+	if {p::true::%{_p}'s uuid%::heroName} and {p::true::%{_p}'s uuid%::herogender} is set:
+		set line 6 of {_p}'s scoreboard to "&f&l%{p::true::%{_p}'s uuid%::heroName}% &7(%{p::true::%{_p}'s uuid%::heroGender}%&7)"
+	else if {p::true::%{_p}'s uuid%::heroGender} is set:
+		set line 6 of {_p}'s scoreboard to "&f&l&7(%{p::true::%{_p}'s uuid%::heroGender}%&7)"
+	else if {p::true::%{_p}'s uuid%::heroName} is set:
+		set line 6 of {_p}'s scoreboard to "&f&l%{p::true::%{_p}'s uuid%::heroName}%"
+	else:
+		set line 6 of {_p}'s scoreboard to "&7&n&l________"
+	
+
+	set line 5 of {_p}'s scoreboard to ""
+	set line 4 of {_p}'s scoreboard to "&eMoney: %{p::true::%{_p}'s uuid%::money}%"
+	set line 3 of {_p}'s scoreboard to "&7Level: %{p::true::%{_p}'s uuid%::level}% &8(%round({p::true::%{_p}'s uuid%::xp} / {i::xpRequirements::%{p::true::%{_p}'s uuid%::level} + 1%} * 100)%%%)"
+	set line 2 of {_p}'s scoreboard to ""
+	set line 1 of {_p}'s scoreboard to "&c&n%{i::ip}%"

@@ -1,0 +1,15 @@
+on right click on stonecutter:
+	cancel event
+	if cooldown("%player%", "Sex Saw", 60 seconds, true) is true:
+		if {p::true::%player's uuid%::heroGender} is "&bMale":
+			set {p::true::%player's uuid%::heroGender} to "&dFemale"
+		else if {p::true::%player's uuid%::heroGender} is "&dFemale":
+			set {p::true::%player's uuid%::heroGender} to "&eEnby"
+		else:
+			set {p::true::%player's uuid%::heroGender} to "&bMale"
+		damage player by 2
+		set invulnerability ticks of entity to 1
+		reloadSidebar(player)
+		set {p::false::%player's uuid%::death message} to "The healthcare system failed <victim>"
+	else:
+		send "&c&oYou can't do that again it hurts too much..." to player

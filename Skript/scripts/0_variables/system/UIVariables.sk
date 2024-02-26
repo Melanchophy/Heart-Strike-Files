@@ -1,0 +1,5 @@
+# Variables for the UI
+
+on load:
+	set {i::ip} to "0"
+	set {i::tablistBanner} to "  &4&m< &c⳧&4&m > < &c&m=&4&m > < &c⳧&4&m > < &c&m=&4&m > < &c⳧&4&m > < &c&m=&4&m > < &c⳧&4&m >&r  "

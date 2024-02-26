@@ -1,0 +1,3 @@
+function getDamage(attacker: entity, victim: entity, baseDMG: number) :: number:
+	set {_dmg} to {_baseDMG}
+	return {_dmg}

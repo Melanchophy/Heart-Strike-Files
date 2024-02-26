@@ -1,0 +1,49 @@
+on load:
+
+		#_Format_
+		#{i::regions::%Name%::%Attribute%}
+	
+		#_Attributes_
+		#name
+		#discoverMessage (sends message upon first enter)
+		#discoverSound (plays sound upon first enter)
+		
+		#tp (teleports player to a location)
+		
+		#enterSound (plays a sound at the player)
+
+		#ambientChance (how often ambient sounds wil play)
+		#ambientSounds (the variety of sounds to play)
+		
+		#restrictedTP (upon rejoin will send the player back to a safe location)
+	
+	set {_r} to "lumen"
+	set {i::regions::%{_r}%::name} to "&e&lLumen"
+	set {i::regions::%{_r}%::discoverMessage} to "&7The first friendly town you've came across through-out all your time spent in this underground."
+	set {i::regions::%{_r}%::discoverSound} to "entity.experience_orb.pickup"
+
+	set {_r} to "hellsazalea"
+	set {i::regions::%{_r}%::name} to "&6&lHell's Azalea"
+	set {i::regions::%{_r}%::discoverMessage} to "&7An oversized tree for it's species and of mysterious origin.%nl%You can't explain why but the appearance of the tree is oddly calming."
+	set {i::regions::%{_r}%::discoverSound} to "entity.experience_orb.pickup"
+
+	set {_r} to "gay1"
+	set {i::regions::%{_r}%::name} to "&d&lGay ##1"
+	set {i::regions::%{_r}%::discoverMessage} to "&7Meow mrrp~ nya!? Mrow...%nl%Nyeowowow... ^_^"
+	set {i::regions::%{_r}%::discoverSound} to "entity.cat.stray_ambient"
+
+
+	set {_r} to "section1"
+	set {i::regions::%{_r}%::name} to "&e&lIce Chamber"
+	set {i::regions::%{_r}%::discoverMessage} to "&7A not so friendly chamber of the network. Conditions here seem rough but at least there are some decent people who want to want help."
+	set {i::regions::%{_r}%::enterSound} to "ambient.basalt_deltas.mood"
+	set {i::regions::%{_r}%::ambientChance} to 70
+	add "ambient.basalt_deltas.mood" to {i::regions::%{_r}%::ambientSounds::*}
+	add "ambient.basalt_deltas.additions" to {i::regions::%{_r}%::ambientSounds::*}
+
+
+	set {_r} to "tempwarp"
+	set {i::regions::%{_r}%::tp} to {i::locations::section1}
+
+	set {_r} to "tempwarp2"
+	set {i::regions::%{_r}%::tp} to {i::locations::lumen}

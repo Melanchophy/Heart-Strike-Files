@@ -1,0 +1,22 @@
+command /setmotd [<text>]:
+	permission: skript.setmotd
+	description: Sets the message of the day
+	trigger:
+		if arg-1 is set:
+			set {_t} to arg-1
+			replace all "&" with "§" in {_t}
+			message "&4[&c⚙ Transmission ⚙&4] &fSet the MoTD to '%{_t}%'"
+			set {i::motd} to {_t}
+		else:
+			clear {i::motd}
+			send "&4[&c⚙ Transmission ⚙&4] &fCleared the MoTD"
+
+command /showmotd:
+	description: Displays the message of the day
+	trigger:
+		message {i::motd}
+
+on join:
+	wait a tick
+	if {i::motd} is set:
+		message "%nl%&4[&c⚙ Transmission ⚙&4] &f%{i::motd}%%nl%"

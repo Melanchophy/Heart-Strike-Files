@@ -1,0 +1,33 @@
+on load:
+	set {_i} to "Nice Rock"
+	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Swing"
+	set {i::item::%{_i}%::Damage} to 2
+	set {i::item::%{_i}%::Range} to 2.5
+	set {i::item::%{_i}%::Attack Speed} to 1 seconds
+	set {i::item::%{_i}%::Rarity} to "Common"
+	set {i::item::%{_i}%::level} to 0
+	add "What a nice rock." and "Don't eat it yet." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Brick"
+	set {i::item::%{_i}%} to brick named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Thrust"
+	set {i::item::%{_i}%::Damage} to 4
+	set {i::item::%{_i}%::Range} to 4
+	set {i::item::%{_i}%::Attack Speed} to 1.1 seconds
+	set {i::item::%{_i}%::Rarity} to "Uncommon"
+	set {i::item::%{_i}%::level} to 0
+	add "What a nice brick." and "Don't eat it yet." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Dangerous Rock"
+	set {i::item::%{_i}%} to cobblestone named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Swing"
+	set {i::item::%{_i}%::Damage} to 4
+	set {i::item::%{_i}%::Range} to 3.5
+	set {i::item::%{_i}%::Attack Speed} to 0.6 seconds
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	add "What a violent rock!" and "You DEFINITALLY don't want to eat it!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})

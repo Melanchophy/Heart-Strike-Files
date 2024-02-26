@@ -1,0 +1,9 @@
+command /debugMode:
+	permission: op
+	trigger:
+		if {p::false::%Player's uuid%::debug} is not set:
+			set {p::false::%Player's uuid%::debug} to true
+			send "&7You will now recieve debugging information for multiple occassions."
+		else:
+			clear {p::false::%Player's uuid%::debug}
+			send "&7You will no longer recieve debugging information for multiple occassions."

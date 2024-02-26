@@ -1,0 +1,35 @@
+on arm swing:
+	set {_itemName} to uncolored name of player's tool
+	if {i::item::%{_itemName}%::level} is set:
+		if {p::true::%player's uuid%::Level} >= {i::item::%{_itemName}%::level}:
+			if cooldown(player's uuid, "attackcd", {i::item::%{_itemName}%::attack speed}, true) is true:
+				set item cooldown of player's tool for player to {i::item::%{_itemName}%::attack speed}
+				set {_d} to ({i::item::%{_itemName}%::damage} + player's generic attack damage attribute)
+
+				if {i::item::%{_itemName}%::attack type} is "swing":
+					swingATK(player, {i::item::%{_itemName}%::range}, {_d})
+				else if {i::item::%{_itemName}%::attack type} is "thrust":
+					thrustATK(player, {i::item::%{_itemName}%::range}, {_d})
+				else if {i::item::%{_itemName}%::attack type} is "shock":
+					shockATK(player, {i::item::%{_itemName}%::range}, {_d})
+				else if {i::item::%{_itemName}%::attack type} is "jolt":
+					joltATK(player, {i::item::%{_itemName}%::range}, {_d})
+				else if {i::item::%{_itemName}%::attack type} is "thunder":
+					thunderATK(player, {i::item::%{_itemName}%::range}, {_d})
+				else if {i::item::%{_itemName}%::attack type} is "missile":
+					missileATK(player, {i::item::%{_itemName}%::range}, {_d})
+		else:
+			if cooldown(player's uuid, "weaponLevelError", 1.1 second, false) is true:
+				send "&cYou aren't experienced enough to use this (%{i::item::%{_itemName}%::level}%)"
+		
+	if player's gamemode is adventure:
+		if player's tool is air:
+			if distance between player and player's target entity is less than 4:
+				if cooldown(player's uuid, "punch", 1.1 second, false) is true:
+					set {_v} to player's target entity
+					if damageCheck(player, {_v}) is true:
+						damage {_v} by getDamage(player, {_v}, 1)
+
+	
+
+

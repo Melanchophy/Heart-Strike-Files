@@ -1,0 +1,8 @@
+worlds:
+  heart_strike:
+    type: FLAT
+    environment: NORMAL
+    seed: 7996358776823933493
+    generator-settings: '{"biome": "minecraft:plains","layers": []}}'
+    structures: false
+    hardcore: false

@@ -1,0 +1,17 @@
+function joltATK(a: entity, r: number, d: number):
+	set {_l} to location 0.5 blocks below {_a}'s head
+	play sound "item.trident.riptide_1" with pitch 1.2 at {_a}
+	loop {_r} times:
+		loop 2 times:
+			draw 1 of dust using dustOption(white, 1) at {_l} ~ {_v} with extra 0.0
+			loop all entities in radius 0.8 of location 0.5 block below {_l}:
+				if damageCheck({_a}, loop-entity) is true:
+					if {_tagged::*} does not contain loop-entity:
+						damage loop-entity by getDamage({_a}, loop-entity, {_d})
+						add loop-entity to {_tagged::*}
+						loop 10 times:
+							draw 1 of electric spark at loop-entity's head with extra 1
+			set {_l} to location 0.5 block in front of {_l}
+	
+	
+	

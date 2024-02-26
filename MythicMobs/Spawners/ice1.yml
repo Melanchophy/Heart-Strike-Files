@@ -1,0 +1,12 @@
+ice1:
+  MobName: iceYield
+  World: heart_strike
+  X: 1051
+  Y: 20
+  Z: -41
+  Yaw: 0.0
+  Pitch: 0.0
+  MobLevel: '1'
+  MaxMobs: '1'
+  Cooldown: 0
+  Warmup: 0

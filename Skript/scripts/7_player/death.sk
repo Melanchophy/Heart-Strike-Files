@@ -1,0 +1,12 @@
+on death of player:
+	if {p::false::%victim's uuid%::death message} exists:
+		set death message to {p::false::%victim's uuid%::death message}
+		if {p::true::%victim's uuid%::heroName} exists:
+			replace all "<victim>" with "&o%{p::true::%victim's uuid%::heroName}%&f" in death message
+		else:
+			replace all "<victim>" with "&o%victim's name%&f" in death message
+		clear {p::false::%victim's uuid%::death message}
+	
+	set death message to "&c&l∴&c %death message%"
+
+# MOTOR OIL IS SO FLAMABLE :FIRE:

@@ -1,0 +1,9 @@
+command /tablist:
+	permission: op
+	trigger:
+		tablistReload(player)
+ 
+
+function tablistReload(p: player):
+	set tablist header of {_p} to "%nl%%{_i}%%nl%%nl%&0&n &m❤&0&n &lHeart Strike&0&n &m❤&0&n %nl%"
+	set tablist footer of {_p} to "%nl%&7Tps: %2nd element of tps%%nl%&7Players %number of online players%/%max players%%nl%&7IP: &N%{i::ip}%%nl%&n&r%nl%%{_i}%%nl%"

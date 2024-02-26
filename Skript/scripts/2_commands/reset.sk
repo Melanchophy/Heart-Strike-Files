@@ -1,0 +1,44 @@
+
+command /reset [<text>]:
+	permission: op
+	trigger:
+		if arg-1 isn't set:
+			send "&7Please select an option."
+			exit
+		clear {p::false::%player's uuid%::%arg-1%::*}
+		clear {p::true::%player's uuid%::%arg-1%::*}
+		send "&7&oReset all your %arg-1% related data!"
+
+on tab complete of "/reset":
+	set tab completions for position 1 to "regions" and "npc"
+
+
+command /resetall [<text>]:
+	trigger:
+		if {p::false::%player's uuid%::resetConfirm} isn't set:
+			set {_i::*} to 3 random characters from "a" to "z"
+			set {p::false::%player's uuid%::resetConfirm} to "%{_i::1}%%{_i::2}%%{_i::3}%"
+		else if arg-1 is {p::false::%player's uuid%::resetConfirm}:
+			reset(player)
+			exit
+		send formatted "&7&oIf you're sure you want to reset, please type ""<sgt:/resetall %{p::false::%player's uuid%::resetConfirm}%><tooltip:&7Click to copy%nl%&f&n/resetall %{p::false::%player's uuid%::resetConfirm}%>/resetall %{p::false::%player's uuid%::resetConfirm}%""" to player
+
+on tab complete of "/resetall":
+	if {p::false::%player's uuid%::resetConfirm} is set:
+		set tab completions for position 1 to {p::false::%player's uuid%::resetConfirm}
+
+function reset(p: player):
+	clear {p::true::%{_p}'s uuid%::*}
+	clear {p::false::%{_p}'s uuid%::*}
+
+	loop {i::genericPlayerStats::*}:
+		if {p::false::%{_p}'s uuid%::%loop-value%} is not set:
+			set {p::true::%{_p}'s uuid%::%loop-value%} to 0
+	
+	updateDisplayname({_p})
+	reloadSidebar({_p})
+	tablistReload({_p})
+
+	teleport {_p} to {i::locations::spawn}
+
+	open creationGUI() to {_p}

@@ -1,0 +1,21 @@
+on damage of entity:
+
+	# Prevents players from attacking entities
+	if attacker is player:
+		if damage cause is an attack or sweep attack:
+			cancel event
+			exit
+
+	# Damage calculation
+	else if victim is player:
+		set damage to getDamage(attacker, victim, damage)
+		
+	# Display damage
+	loop 3 times:
+		set {_rn::%loop-value%} to random number between 0.2 and -0.2
+	spawn armor stand at event-location ~ vector({_rn::1}, {_rn::2}, {_rn::3}) with nbt compound from "{Invisible:1b,CustomName:'[{""text"":""&c%damage%""}]',NoGravity:1b,CustomNameVisible:1b,NoAI:1b}"
+	set {_di} to last spawned armor stand
+	wait 1 tick
+	set victim's invulnerability ticks to 1
+	wait 19 ticks
+	kill {_di}

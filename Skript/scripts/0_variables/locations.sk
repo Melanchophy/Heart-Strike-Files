@@ -1,0 +1,15 @@
+# Location data, usually for teleportation
+
+on load:
+    clear {i::locations::*}
+    set {i::locations::spawn} to location(-499.5, 51.00, 0.50, world "heart_strike", 180, 0)
+    set {i::locations::lumenEntrance} to location(34, 48.06250, 67, world "heart_strike", 180, 0)
+    set {i::locations::lumen} to location(0.5, 41.00, 19.5, world "heart_strike", 180, 0)
+    set {i::locations::gay1} to location(-31.5, 55.00, 86.5, world "heart_strike", 180, 0)
+    set {i::locations::hellsazalea} to location(30.5, -3.00, -32.5, world "heart_strike", 90, 0)
+    set {i::locations::section1} to location(972.50, 32.00, 30.50, world "heart_strike", 180, 0)
+    set {i::locations::section2} to location(2007.50, -37.00, -156.50, world "heart_strike", 00, 0)
+    set {i::locations::section3} to location(3000.50, 100.00, 0.50, world "heart_strike", 180, 0)
+    
+    set {i::locations::brawnstone} to location(4000.50, 100.00, 0.50, world "heart_strike", 180, 0)
+    set {i::locations::section4} to location(5000.50, 100.00, 0.50, world "heart_strike", 180, 0)

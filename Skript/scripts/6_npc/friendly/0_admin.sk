@@ -1,0 +1,28 @@
+on right click on entity:
+	if name of event-entity starts with "&a":
+		if cooldown("%player%", "NpcProgression", 0.5 seconds, false) is true:
+			set {_npc} to uncolored name of event-entity
+
+			# Generic stuff
+
+			if {i::NPC::%{_npc}%::dialogue::1::1} is set:
+				set {p::false::%player's uuid%::npcCanProgress::%{_npc}%} to false
+
+				set {_block} to {p::true::%player's uuid%::npc::%{_npc}%::dialogue}
+				set {_line} to {p::false::%player's uuid%::npc::%{_npc}%::dialogue}
+				
+				if {p::false::%player's uuid%::debug} is set:
+					send "&a%{_block}%" to player
+					send "&c%{_line}%" to player
+
+				
+				
+				# Script Specific stuff
+
+				if {_npc} is "Melany":
+					if {i::npc::%{_npc}%::dialogue::%{_block}%::%{_line}+1%} is not set:
+				
+						if {_block} = 1:
+							if player's inventory contains cake:
+								remove 1 cake from player's inventory
+								clear {p::false::%player's uuid%::npcCanProgress::%{_npc}%}

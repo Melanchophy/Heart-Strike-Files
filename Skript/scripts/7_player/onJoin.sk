@@ -1,0 +1,72 @@
+on join:
+	set player's hunger to 10
+	set player's saturation to 2
+	set player's generic attack speed attribute to 99
+
+	if {s::playerJoins::%player's uuid%} is not set:
+		reset(player)
+		set {s::playerJoins::%player's uuid%} to true
+		set join message to "&e%player's name% has joined for the first time! (##%number of indexes of {s::playerJoins::*}%)"
+	else:
+		set join message to "&e%player's name% has joined"
+
+
+	# Prevents player from rejoining (breaking cutscene code and stuff) into a region they shouldn't be in
+	set {_regions::*} to regions at player
+	loop {_regions::*}:
+		set {_r::%loop-value%::*} to "%loop-value%" split at " "
+		set {_r::%loop-value%} to {_r::%loop-value%::1}
+
+	loop {_r::*}:
+		if {i::regions::%loop-value%::restricted} is set:	
+			teleport player to location(0.50, 0.00, 0.50, world "heart_strike")
+			wait 3 seconds
+			play sound "block.note_block.pling" with volume 2 with pitch 0.2 at player for player
+			send "&4&l>&c You had disconnected during an event, you are now back in spawn."
+	
+	
+
+	tablistReload(player)
+	reloadSidebar(player)
+	updateDisplayname(player)
+	itemSync(player)
+
+on disconnect:
+	set leave message to "&e%Player's name% has left"
+
+on respawn:
+	wait 2 ticks
+	updateDisplayname(player)
+
+function updateDisplayname(p: player):
+	if {p::true::%{_p}'s uuid%::heroName} is set:
+		set {_name} to {p::true::%{_p}'s uuid%::heroName}
+	else:
+		set {_name} to {_p}'s name
+	
+	if {_p} has permission "hs.admin":
+		set {_p}'s display name to "&c[Admin] %{_name}%"
+		set {_p}'s tablist name to "&c[Admin] %{_name}%"
+		disguise {_p} as {_p}'s name
+	else:
+		set {_p}'s display name to "&e%{_name}%"
+		set {_p}'s tablist name to "&e%{_name}%"
+		disguise {_p} as {_p}'s name
+
+
+command /itemSync:
+	trigger:
+		itemSync(player)
+
+function itemSync(p: player):
+	set {_n} to 0
+	loop 40 times:
+		if custom model data of slot {_n} of {_p}'s inventory is greater than 0:
+			set {_a} to item amount of slot {_n} of {_p}'s inventory
+			set slot {_n} of {_p}'s inventory to {i::item::%uncolored name of slot {_n} of {_p}'s inventory%}
+			set item amount of slot {_n} of {_p}'s inventory to {_a}
+		add 1 to {_n}
+
+on hunger bar change:
+	cancel event
+

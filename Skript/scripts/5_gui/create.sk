@@ -1,0 +1,101 @@
+command /create:
+	trigger:
+		open creationGUI() to player
+
+
+
+	# Creation GUI functionality
+
+on inventory click:
+	if name of player's current inventory contains "⳧":
+		if name of player's current inventory is "&4&l&n[⳧] Character Creation    ":
+			if index of event-slot is 20:
+				set {_pi} to player's current inventory
+				close player's inventory
+				set {p::false::%player's uuid%::choosingName} to true
+				Send "&7Send your name in chat."
+				while {p::false::%player's uuid%::choosingName} is set:
+					wait 2 ticks
+					#Links to /1_social/0_xchat.sk
+				reloadSidebar(player)
+				show {_pi} to player
+				set slot 20 of player's current inventory to lectern named "&cYour Name: %{p::false::%player's uuid%::heroName}%" with lore "&7Click the lectern%nl%&7again to rename."
+			
+			# Gender
+
+			else if index of event-slot is 21:
+				if type of event-item is black concrete or yellow concrete:
+					set event-slot to light blue concrete named "&b[Male]" with lore "&7&o[He/Him]%nl%&7Cycle between:%nl%&b&o[Male] &d&o[Female] &e&o[Enby]"
+					set {p::false::%player's uuid%::heroGender} to "&bMale"
+				else if type of event-item is light blue concrete:
+					set event-slot to pink concrete named "&d[Female]" with lore "&7&o[She/Her]%nl%&7Cycle between:%nl%&b&o[Male] &d&o[Female] &e&o[Enby]"
+					set {p::false::%player's uuid%::heroGender} to "&dFemale"
+				else if type of event-item is pink concrete:
+					set event-slot to yellow concrete named "&e[Enby]" with lore "&7&o[They/Them]%nl%&7Cycle between:%nl%&b&o[Male] &d&o[Female] &e&o[Enby]"
+					set {p::false::%player's uuid%::heroGender} to "&eEnby"
+				reloadSidebar(player)
+			
+			else if index of event-slot is 22:
+				send "&7The tutorial is not available as of now."
+			
+			else if index of event-slot is 24:
+				if {p::false::%player's uuid%::heroName} is not set:
+					send "%nl%Sorry, please click the lectern to choose a name.%nl%"
+					
+				else if {p::false::%player's uuid%::heroGender} is not set:
+					send "%nl%Sorry, please click the black concrete to choose your gender.%nl%%nl%&b[Male] (He/Him)%nl%&d[Female] (She/Her)%nl%&e[Enby] (They/Them)%nl%&7&oThey/Them are neutral pronouns.%nl%&7&oCan be used for all genders.%nl%"
+				
+				else:
+					set {p::true::%player's uuid%::heroGender} to {p::false::%player's uuid%::heroGender}
+					set {p::true::%player's uuid%::heroName} to {p::false::%player's uuid%::heroName}
+					teleport player to {i::locations::lumen}
+					updateDisplayname(player)
+					reloadSidebar(player)
+					tablistReload(player)
+
+	# Creates an inventory instance of the creation GUI
+
+on inventory close:
+	set {_i} to event-inventory
+	if name of {_i} is "&4&l&n[⳧] Character Creation    ":
+		if {p::true::%player's uuid%::heroName} is not set:
+			wait 1 ticks
+			if {p::false::%player's uuid%::choosingName} is set:
+				exit
+			open {_i} to player
+
+
+
+
+
+
+function creationGUI() :: inventory:
+	set {_i} to chest inventory named "&4&l&n[⳧] Character Creation    " with 5 rows
+
+	loop 31 times:
+		set slot loop-value+9 of {_i} to gray stained glass pane named "&f"
+
+	loop 2 times:
+		loop 9 times:
+			set slot (loop-value-2) - 1 + {_n} of {_i} to red stained glass pane named "&f"
+		add 36 to {_n}
+	set {_n} to 9
+	loop 3 times:
+		set slot {_n} of {_i} to red stained glass pane named "&f"
+		add 8 to {_n}
+
+		set slot {_n} of {_i} to red stained glass pane named "&f"
+		add 1 to {_n}
+	if {p::true::%{_p}'s uuid%::heroName} is set:
+		set slot 20 of {_i} to lectern named "&cYour Name: %{p::true::%{_p}'s uuid%::heroName}%" with lore "&7Click the lectern%nl%&7again to rename."
+	else:
+		set slot 20 of {_i} to lectern named "&c[!] Choose Your Name" with lore "&7Write your new name%nl%&7and never forget it."
+	set slot 21 of {_i} to black concrete named "&c[!] Choose Your Gender" with lore "&7Cycle between:%nl%&b&o[Male] &d&o[Female] &e&o[Enby]"
+	set slot 22 of {_i} to redstone block named "&c[!] Play Tutorial?" with lore "&7Currently not available.%nL%&7Sorry for the inconvenience.%nl%&7There is some info in the Lumen%nl%&7town hall if you need help!"
+	set slot 24 of {_i} to bell named "&c[!] Start" with lore "&7To do list:%nl%&7➢ Write a name%nl%&7➢ Choose your gender%nl%&7➢ Play the tutorial?%nl%&8   (optional)"
+	
+	set {_head} to player skull with nbt from "{SkullOwner:{Id:[I;-1267378786,1551321428,-1885045424,-179656013],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGZkNWJkZTk5NGUwYTY0N2FmMTgyMzY4MWE2MTNjMmJmYzNkOTczNmY4ODlkYmY4YzNiYmJhNWExM2Y4ZWQifX19""}]}}}"
+
+	set slot 12 of {_i} to {_head} named "&c&l⚙ &7&nSettings&c &l⚙"
+
+	return {_i}

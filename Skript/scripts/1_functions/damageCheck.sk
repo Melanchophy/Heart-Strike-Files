@@ -1,0 +1,9 @@
+function damageCheck(attacker: entity, victim: entity) :: boolean:
+	if {_attacker} is {_victim}:
+		return false
+	else if {_victim} is instanceof activemob:
+		return true
+	else if {p::false::pvp} is set:
+		return true
+	else:
+		return false

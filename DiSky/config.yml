@@ -1,0 +1,43 @@
+# This is the main configuration file of DiSky.
+# Made for v4, older configuration version won't work.
+
+# In the DiSky error handler, which error code should not be shown in the console?
+# You can take a took at every discord error code here:
+# https://discord.com/developers/docs/topics/opcodes-and-status-codes#json
+ignored-codes:
+  - '50006' # Hide empty message error
+
+# Debug is disabled by default.
+# If an admin or a developer wants to debug the bot, enable this option.
+# Debug messages will be sent to the console, and the bot will be restarted.
+debug: false
+
+# Because of a Skript parsing issue, the 'online' enumeration value for the bot's status override '%players% is online' condition.
+# If you never use this condition, or never experienced an issue like that, do not touch this.
+# This will force DiSky to use TEXT and not ENUMERATION for the status, aka:
+# 'set online status of bot "name" to ONLINE' will be '... to "online"'
+# More info on the wiki: https://docs.disky.me/basic-stuff/presence-and-status
+fix-skript-online-status: false
+
+# Enable or not the 'token of %bot' expression.
+# It's mainly to avoid others people that have access to Skript to get the token.
+# Restart needed to take effect.
+token-of-bot-expression: true
+
+# When stopping the server, DiSky will try to stop all the bots gracefully.
+# For that, the server will have to wait for all the requests to be done.
+# If you don't want to wait some seconds when stopping the server, disable this.
+# Restart needed to take effect. If enabled, you can configure the max time-out time below.
+stop-bots-gracefully: true
+
+# The max time-out time in seconds when stopping the server of bots.
+# Does nothing if 'stop-bots-gracefully' is disabled.
+# Restart needed to take effect.
+stop-bots-timeout: 5
+
+# The developer debug mode will warn you about skript developer-end errors, including, but not limited to:
+# - Null/not set values
+# - Incompatible types
+# - States that are not supposed to be reached
+# - And more...
+developer-debug: false

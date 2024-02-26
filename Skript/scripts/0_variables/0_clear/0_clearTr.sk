@@ -1,0 +1,35 @@
+on load:
+
+    # 
+    # Variable Structure
+    #
+    # {s::*}
+    # Server Variables
+    # These are generic variables which are never deleted.
+    #
+    # {i::*}
+    # Internal Variables
+    # These are variables which are deleted on server start
+    # Then are set again.
+    #
+    # {p::true::%player's uuid%::*}
+    # True Entity Variables
+    # These are never reset as they contain the player's progress.
+    # May be deleted through the reset command or if a player has been cheating and must be wiped.
+    #
+    # {p::false::%player's uuid%::*}
+    # Temporary Entity Variables
+    # Just like Internal Variables, but are deleted upon players rejoining.
+    #
+    # {p::%player's uuid%::*}
+    # Definitive Entity Variables
+    # These are NEVER reset as they contain external factors.
+    # Such of which will contain player purchases.
+    #
+
+    # Clearing all the temporary variables and server,
+    # Any hard variables such as items used in events
+    clear {i::*}
+    clear {p::false::*}
+    
+

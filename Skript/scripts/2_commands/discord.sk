@@ -1,0 +1,62 @@
+command /discord [<text>]:
+	trigger:
+
+		if arg-1 is "link":
+			if {p::true::%player's uuid%::discordAccount} is not set:
+				##Generating the code
+				if {p::false::%player's uuid%::discordLinkCode} isn't set:
+					set {_i::*} to 6 random characters from "a" to "z"
+					set {_i} to "%{_i::*}%"
+					replace all ", " and " and " with "" in {_i}
+					set {_i} to "%player's name%-%{_i}%"
+					set {p::false::%player's uuid%::discordLinkCode} to {_i}
+				else:
+					set {_i} to {p::false::%player's uuid%::discordLinkCode}
+
+				#Telling the player how to link
+				send formatted "%nl%&7&oWhen you're ready to link, please type ""&n<sgt:Link %{_i}%><tooltip:&7Click to copy:%nl%&f&nLink %{_i}%>Link %{_i}%<reset>&7&o"" in ##bot-commands%nl%" to player
+				
+				#Adds the player's uuid and code to a list variable
+				set {i::pendingLinks::%{_i}%} to player
+			else:
+				set {_user} to user with the id {p::true::%player's uuid%::discordAccount}
+				send "%nl%&7&oSorry, your account is already linked to %{_user}%. You may do /unlink if this was not authorised.%nl%"
+		
+		else if arg-1 is "unlink":
+			if {p::true::%player's uuid%::discordAccount} is set:
+				send "%nl%&7&oYour account will now be unlinked from %user with id {p::true::%player's uuid%::discordAccount}%.%nl%"
+				clear {p::true::%player's uuid%::discordAccount}
+			else:
+				send "%nl%&7&oYour account is not currently linked to any discord account.%nl%"
+		
+		else if arg-1 is "invite":
+			send "%nl%&7&oThe link to our discord is: &n<link:https://discord.gg/MWYH3TAFED><tooltip:&7Our discord: &f&nhttps://discord.gg/MWYH3TAFED>https://discord.gg/MWYH3TAFED<reset>%nl%"
+		else:
+			send "%nl%&7&oThe link to our discord is: &n<link:https://discord.gg/MWYH3TAFED><tooltip:&7Our discord: &f&nhttps://discord.gg/MWYH3TAFED>https://discord.gg/MWYH3TAFED<reset>%nl%"
+
+on tab complete of "/discord":
+	set tab completions for position 1 to "link", "unlink" and "invite"
+
+message receive:
+	wait 1 tick
+	if "%event-textchannel%" contains "bot-commands":
+		if event-member is not a discord bot:
+			if "%event-message%" contains "Link ":
+			
+				#Extracting the Link Code
+				set {_i::*} to split event-message at " "
+				set {_code} to {_i::2}
+
+				if {i::pendingLinks::%{_code}%} is set:
+
+					set {_p} to {i::pendingLinks::%{_code}%}
+					set {_u} to event-member
+
+					set {p::true::%{_p}'s uuid%::discordAccount} to {_u}'s discord id
+					clear {p::false::%{_p}'s uuid%::discordLinkCode}
+
+					post "Success! %{_p}% is now linked with %{_u}%" to text channel with id "1196995323583791234"
+
+
+				else:
+					post "The code __%{_code}%__ is not recognized." to text channel with id "1196995323583791234"

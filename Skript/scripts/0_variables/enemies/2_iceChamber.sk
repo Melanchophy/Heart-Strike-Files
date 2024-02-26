@@ -1,0 +1,10 @@
+on load:
+	set {_m} to "Living Ice Yield"
+	clear {i::enemy::%{_m}%::*}
+	set {i::enemy::%{_m}%::pvp} to true
+	set {i::enemy::%{_m}%::xp} to 1
+	set {i::enemy::%{_m}%::level} to 0
+	set {i::enemy::%{_m}%::g} to 0
+	set {i::enemy::%{_m}%::armor} to 0
+	add {i::item::statically charged wool} to {i::enemy::%{_m}%::dropitem::*}
+	add 10 to {i::enemy::%{_m}%::dropchance::*}

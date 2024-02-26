@@ -1,0 +1,33 @@
+# http://www.mythicmobs.net
+
+creatorZombie:
+  Type: zombie
+  Display: '&cCreator Zombie'
+  Health: 40
+  Damage: 8
+  Equipment:
+  - IRON_HELMET HEAD
+  - SHIELD OFFHAND
+  LevelModifiers:
+  - health 5
+  - damage 0.5
+  Options:
+    MovementSpeed: 0.1
+
+iceYield:
+  Type: stray
+  Display: '&cLiving Ice Yield'
+  Health: 10
+  Damage: 8
+  Equipment:
+  - IRON_HELMET HEAD
+  - AIR HAND
+  LevelModifiers:
+  - health 5
+  - damage 0.5
+  Options:
+    MovementSpeed: 0.1
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll

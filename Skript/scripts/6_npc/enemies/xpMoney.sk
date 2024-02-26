@@ -1,0 +1,81 @@
+function xpGrant(p: player, a: number):
+	set {_n} to 0
+	
+	if {i::xpRequirements::%{p::true::%{_p}'s uuid%::level} + 1%} is not set:
+		set {_xpreq} to false
+	else:
+		set {_xpreq} to {i::xpRequirements::%{p::true::%{_p}'s uuid%::level} + 1%}
+	add {_a} to {p::true::%{_p}'s uuid%::xp}
+	
+	
+	while {p::true::%{_p}'s uuid%::xp} is less than 0:
+		set {_xpreq} to {i::xpRequirements::%{p::true::%{_p}'s uuid%::level}%}
+		remove 1 from {p::true::%{_p}'s uuid%::level}
+		remove 1 from {p::true::%{_p}'s uuid%::skills::points}
+		if {p::true::%{_p}'s uuid%::level} is less than 0:
+			set {_n} to 0
+			set {p::true::%{_p}'s uuid%::level} to 0
+			set {p::true::%{_p}'s uuid%::xp} to 0
+			set {_p}'s level to {p::true::%{_p}'s uuid%::level}
+			play sound "entity.player.levelup" in ambient category with volume 1.1 with pitch 0.8 at {_p} for {_p}
+			send "&aYou are now level &6%{p::true::%{_p}'s uuid%::level}%&a!" to {_p}
+		else:
+			remove 1 from {_n}
+			add {_xpreq} to {p::true::%{_p}'s uuid%::xp}
+	
+	while {p::true::%{_p}'s uuid%::xp} is greater than or equal to {_xpreq}:
+		
+		add 1 to {_n}
+		add 1 to {p::true::%{_p}'s uuid%::level}
+		remove {_xpreq} from {p::true::%{_p}'s uuid%::xp}
+		
+		if {i::xpRequirements::%{p::true::%{_p}'s uuid%::level} + 1%} is not set:
+			set {_xpreq} to false
+			exit loop
+		else:
+			set {_xpreq} to {i::xpRequirements::%{p::true::%{_p}'s uuid%::level} + 1%}
+	
+	if {_xpreq} is false:
+		set {_p}'s level progress to 0
+	else:
+		set {_p}'s level progress to {p::true::%{_p}'s uuid%::xp} / {_xpreq}
+	
+	if {_n} != 0:
+		set {_p}'s level to {p::true::%{_p}'s uuid%::level}
+		
+		play sound "entity.player.levelup" in ambient category with volume 1.1 with pitch 0.8 at {_p} for {_p}
+		send "&aYou are now level &6%{p::true::%{_p}'s uuid%::level}%&a!" to {_p}
+	
+	reloadSidebar({_p})
+
+
+
+on load:
+	set {i::xpRequirements::1} to 3
+	set {i::xpRequirements::2} to 10
+	set {i::xpRequirements::3} to 13
+	set {i::xpRequirements::4} to 18
+	set {i::xpRequirements::5} to 30
+	set {i::xpRequirements::6} to 40
+	set {i::xpRequirements::7} to 50
+	set {i::xpRequirements::8} to 70
+	set {i::xpRequirements::9} to 90
+	set {i::xpRequirements::10} to 110
+	set {i::xpRequirements::11} to 250
+	set {i::xpRequirements::12} to 330
+	set {i::xpRequirements::13} to 360
+	set {i::xpRequirements::14} to 390
+	set {i::xpRequirements::15} to 500
+	
+	set {i::xpRequirements::16} to 1000
+	set {i::xpRequirements::17} to 1500
+	set {i::xpRequirements::18} to 2000
+	set {i::xpRequirements::19} to 2500
+	set {i::xpRequirements::20} to 5000
+	set {i::xpRequirements::21} to 10000
+	set {i::xpRequirements::21} to 999999
+
+
+
+function moneyGrant(p: player, n: integer):
+	set {p::true::%{_p}'s uuid%::money} to {p::true::%{_p}'s uuid%::money} + {_n}

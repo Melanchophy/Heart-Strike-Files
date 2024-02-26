@@ -1,0 +1,17 @@
+on load:
+	# Setting generic stats to 0 instead of "<none>"
+	clear {i::genericPlayerStats::*}
+	add "money" to {i::genericPlayerStats::*}
+	add "level" to {i::genericPlayerStats::*}
+	add "xp" to {i::genericPlayerStats::*}
+
+on disconnect:
+	loop {i::genericPlayerStats::*}:
+		if {p::false::%player's uuid%::%loop-value%} is 0:
+			clear {p::false::%player's uuid%::%loop-value%}
+	clear {p::false::%player's uuid%::*}
+
+on join:
+	loop {i::genericPlayerStats::*}:
+		if {p::false::%player's uuid%::%loop-value%} is not set:
+			set {p::false::%player's uuid%::%loop-value%} to 0

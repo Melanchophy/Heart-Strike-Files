@@ -1,0 +1,139 @@
+
+# I made a new file with the commented-out code below and added it to gitignore
+# I left this here so you know exactly what settings we have :3
+
+#define new bot named "transmission":
+#	token: "ODQ5OTU3MTc0ODgzOTA5NjUy.GfGikK.NKvai-blMpgx_akFzG_YWiYSF8m9WnJUvxuO5U"
+#	intents: default intents
+#	policy: all
+#	auto reconnect: true
+#	compression: none
+
+
+
+
+# MC>Discord lags behind 1 tick to allow internal message updates (death messages)
+
+message receive:
+	if "%event-textchannel%" contains "mc-chat":
+		if event-member is not a discord bot:
+			set {_a::*} to message attachments of event-message
+			if "%event-message%" is not "":
+				if author of event-message's referenced message is set:
+					broadcast formatted "&5[&dD&5] &f%Event-member's effective name% &7➢ %author of event-message's referenced message% &8»&f %event-message%"
+				else:
+					broadcast formatted "&5[&dD&5] &f%Event-member's effective name% &8»&f %event-message%"
+			loop {_a::*}:
+				broadcast formatted "&5[&dD&5] &f%Event-member's effective name% &8»&f <link:%loop-value%>%loop-value%"
+
+on chat:
+	cancel event
+	# Tells transmission that players are active
+	set {i::randomMessages} to now
+
+	# If player is chosing a hero name
+	if {p::false::%player's uuid%::choosingName} is set:
+		cancel event
+		clear {p::false::%player's uuid%::choosingName}
+
+		if filterText(message) is true:
+			send "&7Sorry that name contained a blacklisted word!"
+			exit
+		
+		set {p::false::%player's uuid%::heroName} to uncolored message
+		exit
+ 
+	else if filterText(message) is true:
+		send "&7Sorry that message contained a blacklisted word!"
+		exit
+
+	replace all "&" with "§" in message
+	replace all ":flower:" with "✿" in message
+	replace all ":aid:" with "⚚" in message
+	replace all ":gear:" with "⚙" in message
+	replace all ":moon:" with "☽" in message
+	replace all ":star:" with "★" in message
+	replace all ":intersex:" with "⚥" in message
+	replace all ":female:" with "♀" in message
+	replace all ":male:" with "♂" in message
+	replace all ":spark:" with "⚡" in message
+	replace all ":warn:" with "⚠" in message
+	replace all ":whiteflag:" with "⚑" in message
+	replace all ":blackflag:" with "⚐" in message
+	
+	if uncolored message is "":
+		exit
+
+	if {p::true::%player's uuid%::heroName} is set:
+		broadcast formatted "<tooltip:&f%player's name%'s hero>%player's display name%<reset> &8»&r %message%"
+	else:
+		broadcast formatted "%player's display name% &8»&r %message%"
+	
+	wait 1 tick
+	post "%uncolored player's name% » %uncolored message%" to text channel with id "1199214941798932590"
+
+on death of player:
+	wait 1 tick
+	make embed:
+		set title of embed to ":skull: %uncolored death message%"
+		set embed color of embed to red
+	post last embed to text channel with id "1199214941798932590"
+
+on join:
+	wait 1 tick
+	make embed:
+		set title of embed to "%player's name% has joined!"
+		set embed color of embed to green
+		set time stamp of embed to now
+	post last embed to text channel with id "1199214941798932590"
+
+on disconnect:
+	wait 1 tick
+	make embed:
+		set title of embed to "%player's name% has left."
+		set embed color of embed to red
+		set time stamp of embed to now
+	post last embed to text channel with id "1199214941798932590"
+
+
+
+# Transmission random messages
+
+every 10 minutes:
+	if difference between {i::randomMessages} and now is less than 30 minutes:
+		randomTransmissionBroadcast()
+
+command /randomBroadcast:
+	permission: op
+	trigger:
+		randomTransmissionBroadcast()
+
+function randomTransmissionBroadcast():
+	set {_msg} to random element out of {i::randomMessages::*}
+	broadcast "&4[&c⚙ Transmission ⚙&4]&f %{_msg}%"
+	make embed:
+		set title of embed to uncolored {_msg}
+		set embed color of embed to orange
+		set time stamp of embed to now
+	post last embed to text channel with id "1199214941798932590"
+
+
+
+# Server start/stop messages
+
+on skript start:
+	wait 1 tick
+	make embed:
+		set title of embed to ":green_heart: Server Has Started"
+		set embed color of embed to green
+		set time stamp of embed to now
+	post last embed to text channel with id "1199214941798932590"
+
+
+on server stop:
+	wait 1 tick
+	make embed:
+		set title of embed to ":red_circle: Server Has Stopped"
+		set embed color of embed to red
+		set time stamp of embed to now
+	post last embed to text channel with id "1199214941798932590"

@@ -1,0 +1,11 @@
+ice2:
+  MobName: iceYield
+  World: heart_strike
+  X: 1049
+  Y: 22
+  Z: -38
+  Yaw: 0.0
+  Pitch: 0.0
+  MobLevel: '1'
+  Cooldown: 0
+  Warmup: 0

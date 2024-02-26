@@ -1,0 +1,21 @@
+on load:
+	# /dialogue/1(/1)
+	# Random dialogue (progressed dialogue)
+	#
+	# /talkSound/1(/1)
+	# What sound to make at the indexed dialogue
+
+	set {_npc} to "gay ##1"
+	clear {i::npc::%{_npc}%::*}
+	add "So cold. Some tea would be nice, wouldn't it?" to {i::npc::%{_npc}%::dialogue::*}
+	add "Good morning, <player>? I'm not sure how long it's been. Haha..." to {i::npc::%{_npc}%::dialogue::*}
+	add "W-why are you looking at me like that?" to {i::npc::%{_npc}%::dialogue::*}
+
+	add "entity.cat.stray_ambient" to {i::npc::%{_npc}%::talksound::*}
+	add "entity.cat.hurt" to {i::npc::%{_npc}%::talksound::*}
+	add "entity.cat.stray_ambient" to {i::npc::%{_npc}%::talksound::*}
+
+	# IF PLAYER HAS RESOURCE PACK OPTION ENABLED
+	add "heartstrike:npc/gay/tea" to {i::npc::%{_npc}%::talksoundRP::*}
+	add "heartstrike:npc/gay/goodmorning" to {i::npc::%{_npc}%::talksoundRP::*}
+	add "heartstrike:npc/gay/turningred" to {i::npc::%{_npc}%::talksoundRP::*}

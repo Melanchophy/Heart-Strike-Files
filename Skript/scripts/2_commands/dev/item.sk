@@ -1,0 +1,10 @@
+# Item command allows admins to retrieve any item
+
+command /item <text>:
+    permission: op
+    trigger:
+        give player {i::item::%arg-1%}
+        send "&7%name of {i::item::%arg-1%}%"
+
+on tab complete of "/item":
+	set tab completions for position 1 to indexes of {i::item::*}

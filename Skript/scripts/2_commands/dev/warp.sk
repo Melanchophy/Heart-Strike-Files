@@ -1,0 +1,7 @@
+command /warp <text>:
+	permission: op
+	trigger:
+		teleport player to {i::locations::%arg-1%}
+
+on tab complete of "/warp":
+	set tab completions for position 1 to indexes of {i::locations::*}

@@ -1,0 +1,31 @@
+on load:
+	clear {i::blacklistedWords::*}
+
+	# *Sigh* blacklists simple variations of certain words
+	# I know there are still ways of communicating these words
+	# (A user can replace a letter or even insert a space inbetween the letters)
+	# It's only intended to weed out certain users
+	# Ones who follow a "Join > Slur > Leave" process 
+
+	add "Retard" to {i::blacklistedWords::*}
+	add "R3ta" to {i::blacklistedWords::*}
+	add "Ret4" to {i::blacklistedWords::*}
+	add "R3t4" to {i::blacklistedWords::*}
+
+	add "Nigg" to {i::blacklistedWords::*}
+	add "N1gg" to {i::blacklistedWords::*}
+
+	# Of course other slurs must be filtered
+	add "Coon" to {i::blacklistedWords::*}
+	add "Darkie" to {i::blacklistedWords::*}
+
+	add "Chinkie" to {i::blacklistedWords::*}
+	
+	add "Fagg" to {i::blacklistedWords::*}
+	add "F4gg" to {i::blacklistedWords::*}
+
+function filterText(t: text) :: boolean:
+	loop {i::blacklistedWords::*}:
+		if {_t} contains loop-value:
+			return true
+	return false

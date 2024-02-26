@@ -1,0 +1,11 @@
+#
+# WIP development feature.
+#
+
+command /resourcepack:
+	permission: op
+	trigger:
+		if {p::false::%player's uuid%::resourcepack} is not set:
+			set {p::false::%player's uuid%::resourcepack} to true
+		else:
+			clear {p::false::%player's uuid%::resourcepack}

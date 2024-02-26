@@ -1,0 +1,8 @@
+command /pvp:
+	trigger:
+		if {p::false::%player's uuid%::pvp} is not set:
+			set {p::false::%player's uuid%::pvp} to true
+			send "&cPvP is now enabled"
+		else:
+			clear {p::false::%player's uuid%::pvp}
+			send "&9PvP is now disabled"

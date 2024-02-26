@@ -1,0 +1,36 @@
+command /gmc [<player>]:
+	permission: op
+	trigger:
+		if arg-1 is set:
+			set {_p} to arg-1
+		else:
+			set {_p} to player
+		set {_p}'s gamemode to creative
+
+command /gms [<player>]:
+	permission: op
+	trigger:
+		if arg-1 is set:
+			set {_p} to arg-1
+		else:
+			set {_p} to player
+		set {_p}'s gamemode to survival
+
+command /gma [<player>]:
+	permission: op
+	trigger:
+		if arg-1 is set:
+			set {_p} to arg-1
+		else:
+			set {_p} to player
+		set {_p}'s gamemode to adventure
+
+command /gmsp [<player>]:
+	permission: op
+	trigger:
+		if arg-1 is set:
+			set {_p} to arg-1
+		else:
+			set {_p} to player
+		set {_p}'s gamemode to spectator
+

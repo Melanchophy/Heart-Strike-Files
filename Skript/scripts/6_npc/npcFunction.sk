@@ -1,0 +1,110 @@
+
+# This works :D
+
+# Friendlies are green "&a"
+# Hostiles are red "&c"
+
+on right click on entity:
+	if name of entity starts with "&a":
+		if cooldown("%player%", "NpcFunction", 0.5 seconds, false) is true:
+			set {_n} to uncolored name of event-entity
+			if {i::NPC::%{_n}%::dialogue::1} is set:
+				NPCtalkbrain(player, {_n}, false)
+			else if {i::NPC::%{_n}%::dialogue::1::1} is set:
+				NPCtalkbrain(player, {_n}, true)
+			else:
+				npcTalk(player, "%nl%&a%{_n}%&f &8»&f ...%nl%", "entity.villager.trade", {_null})
+
+
+function NPCtalkbrain(p: player, npc: text, progressed: boolean):
+	
+	if {p::false::%{_p}'s uuid%::conversation} is not set:
+		set {p::false::%{_p}'s uuid%::conversation} to true
+
+		if {_progressed} is false:
+
+			# Index Manager
+			set {_dialogueIndex} to random integer between 1 and number of indexes of {i::npc::%{_npc}%::dialogue::*}
+			if number of indexes of {i::npc::%{_npc}%::dialogue::*} is greater than 1:
+				while {_dialogueIndex} is {p::false::%{_p}'s uuid%::%{_npc}%}:
+					set {_dialogueIndex} to random integer between 1 and number of indexes of {i::npc::%{_npc}%::dialogue::*}
+			set {p::false::%{_p}'s uuid%::%{_npc}%} to {_dialogueIndex}
+
+			# Text Manager
+			
+			set {_t} to "%nl%&a%{_npc}%&f &8»&f %{i::npc::%{_npc}%::dialogue::%{_dialogueIndex}%}%%nl%"
+			
+			# Sound Manager
+			if {p::false::%{_p}'s uuid%::resourcepack} is not set:
+				set {_sound} to "%{i::npc::%{_npc}%::talksound::%{_dialogueIndex}%}%"
+				set {_prevIndex} to "%{i::npc::%{_npc}%::talksound::%{p::false::%{_p}'s uuid%::%{_npc}%}%}%"
+			else:
+				if {i::npc::%{_npc}%::talksoundRP::*} is set:
+					set {_sound} to "%{i::npc::%{_npc}%::talksoundRP::%{_dialogueIndex}%}%"
+					set {_prevIndex} to "%{i::npc::%{_npc}%::talksoundRP::%{p::false::%{_p}'s uuid%::%{_npc}%}%}%"
+				else:
+					set {_sound} to "%{i::npc::%{_npc}%::talksound::%{_dialogueIndex}%}%"
+					set {_prevIndex} to "%{i::npc::%{_npc}%::talksound::%{p::false::%{_p}'s uuid%::%{_npc}%}%}%"
+
+		# IF OUR NPC HAS PROGRESSION... oh dear god this is a hard one...
+		else:
+			if {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue} is not set:
+				set {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue} to 1
+			if {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue} is not set:
+				set {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue} to 0
+			
+			set {_block} to {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+			set {_line} to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+
+			if {i::npc::%{_npc}%::dialogue::%{_block}%::%{_line} + 1%} is not set:
+				if {p::false::%{_p}'s uuid%::npcCanProgress::%{_npc}%} is not false:
+					add 1 to {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+					set {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue} to 1
+			else:
+				add 1 to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+
+
+			if {p::false::%{_p}'s uuid%::debug} is set:
+				send "&a%{p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}%" to {_p}
+				send "&c%{p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}%" to {_p}
+			
+
+
+			set {_block} to {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+			set {_line} to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+
+			set {_text} to "%{i::npc::%{_npc}%::dialogue::%{_block}%::%{_line}%}%"
+		
+		
+
+
+		# Resulting text
+
+		set {_text} to "%nl%&a%{_npc}%&f &8»&f %{_text}%%nl%"
+
+		if {p::false::%{_p}'s uuid%::heroName} exists:
+			replace all "<player>" with "&o%{p::false::%{_p}'s uuid%::heroName}%&f" in {_text}
+		else:
+			replace all "<player>" with "&o%{_p}'s name%&f" in {_text}
+
+		npcTalk({_p}, {_text}, {_sound}, {_prevIndex})
+			
+
+		clear {p::false::%{_p}'s uuid%::conversation}
+
+
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+
+function npcTalk(p: player, t: text, s: text, prevSound: text):
+	send "%{_t}%" to {_p}
+	if {_prevSound} is set:
+		stop sound "%{_prevSound}%" for {_p}
+	play sound "%{_sound}%" at {_p} for {_p}
+	
