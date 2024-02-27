@@ -40,6 +40,8 @@ on load:
 	add "Messages for cave life part 5. Find a Hobby That Makes You Happy." to {i::randomMessages::*}
 	add "Messages for cave life part 6. Nurture Healthy Relationships.." to {i::randomMessages::*}
 	add "Messages for cave life part 7. Find Sunbrxst." to {i::randomMessages::*}
+	add "I used to work in a bank. I left because I lost interest." to {i::randomMessages::*}
+
 
 	# Idk about this one
 	# add "Dashing through the halls! The endless writhing walls! So much fun it is to hear them scream! Oh jingle bells, jungle bells." to {i::randomMessages::*}
