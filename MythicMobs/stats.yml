@@ -64,20 +64,20 @@ CRITICAL_STRIKE_RESILIENCE:
 
 DAMAGE_REDUCTION:
   Enabled: false
-  Display: 'Damage Reduction'
+  Display: 'endurance'
   Tooltips:
-    Additive: '+<value> Damage Reduction'
-    Multiply: '+<value> Damage Reduction'
-    Compound: 'x<value> Damage Reduction'
+    Additive: '+<value> endurance'
+    Multiply: '+<value> endurance'
+    Compound: 'x<value> endurance'
   BaseValue: 0
 
-DEFENSE:
+defence:
   Enabled: false
-  Display: 'Defense'
+  Display: 'defence'
   Tooltips:
-    Additive: '+<value> Defense'
-    Multiply: '+<value> Defense'
-    Compound: 'x<value> Defense'
+    Additive: '+<value> defence'
+    Multiply: '+<value> defence'
+    Compound: 'x<value> defence'
   BaseValue: 0
 
 DODGE_CHANCE:
@@ -111,7 +111,7 @@ HEALTH:
 
 HEALTH_REGENERATION:
   Enabled: false
-  Display: 'Health Regeneration'
+  Display: 'regenerationeration'
   Tooltips:
     Additive: '+<value> Regeneration'
     Multiply: '+<value> Regeneration'

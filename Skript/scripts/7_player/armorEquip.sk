@@ -1,0 +1,50 @@
+on armor change:
+	if {i::item::%name of event-item%::level} is greater than {p::true::%player's uuid%::level}:
+		send "&cYou're too low level to use this item! (%{i::item::%name of event-item%::level}%)"
+		play sound "entity.item.break" at player for player
+	else:
+		armorEquip(player, uncolored name of new armor item, 1)
+		
+	if old armor item is not air:
+		if {i::item::%name of old armor item%::level} is not greater than {p::true::%player's uuid%::level}:
+			armorEquip(player, uncolored name of old armor item, -1)
+
+
+function armorEquip(p: player, itemName: text, n: number):
+	add {i::item::%{_itemName}%::defence} * {_n} to {_p}'s generic armor attribute
+	add ({i::item::%{_itemName}%::endurance}) * {_n} to {p::false::%{_p}'s uuid%::endurance}
+	
+	add ({i::item::%{_itemName}%::Max health}) * 2 * {_n} to {_p}'s generic max health attribute
+	if {_n} is less than 0:
+		if {_p}'s health is greater than {_p}'s max health:
+			set {_p}'s health to {_p}'s max health
+	
+	add ({i::item::%{_itemName}%::regeneration}) * {_n} to {p::false::%{_p}'s uuid%::regeneration}
+	add ({i::item::%{_itemName}%::Speed}/10)* {_n} to {_p}'s generic movement speed attribute
+
+	add ({i::item::%{_itemName}%::attack damage} * {_n}) to {p::false::%{_p}'s uuid%::damage}
+	add ({i::item::%{_itemName}%::strength} * {_n}) to {p::false::%{_p}'s uuid%::damage multiplier}
+	
+	add ({i::item::%{_itemName}%::mysticism} * {_n}) to {p::false::%{_p}'s uuid%::mysticism multiplier}
+	add ({i::item::%{_itemName}%::xp} * {_n}) to {p::false::%{_p}'s uuid%::xp multiplier}
+	add ({i::item::%{_itemName}%::gold} * {_n}) to {p::false::%{_p}'s uuid%::gold multiplier}
+	add ({i::item::%{_itemName}%::scavanger} * {_n}) to {p::false::%{_p}'s uuid%::scavanger multiplier}
+	
+on join:
+	set player's generic max health attribute to 20
+	set player's generic movement speed attribute to 0.1
+	set player's generic armor attribute to 0
+	
+	#Armor stats
+	#defence
+	#endurance (%)
+	#Max health
+	#regeneration (%)
+	#Physical Damage (%)
+	#Magic Damage (%)
+	#Misc Damage (%)
+	#Mysticism (%)
+	#Xp (%)
+	#Gold (%)
+	#Scavanger (%)
+	#Level

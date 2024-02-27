@@ -12,7 +12,9 @@ function finalizeItemStats(i: item) :: item:
 
 	set {_itemName} to uncolored name of {_i}
 
-	# LORE
+	# STAT LORE
+	# Weapon Based
+
 	set {_stat} to "attack type"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&8[&7%{i::item::%{_itemName}%::%{_stat}%}%&8]%nl%" to {_l::*}
@@ -29,10 +31,63 @@ function finalizeItemStats(i: item) :: item:
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&9☀ &7%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
 
-	set {_stat} to "Level"
+
+
+	# Armor Based
+
+	set {_stat} to "defence"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&9♦ &7+%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "endurance"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&1♢ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "max health"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&a♥ &7+%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "regeneration"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&2♡ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "speed"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&3♪ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "attack damage"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&4☀ &7+%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "strength"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&4☀ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "mysticism"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&5☽ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "experience"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&d✿ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "gold"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&e★ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	set {_stat} to "scavanger"
+	if {i::item::%{_itemName}%::%{_stat}%} exists:
+		add "&6☆ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
+
+	# Generic
+
+	set {_stat} to "level"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&8¬ &7%{_stat}% %{i::item::%{_itemName}%::%{_stat}%}%%nl%" to {_l::*}
 	
+	
+	# ITEM LORE LORE
+
 	loop {i::item::%{_itemname}%::lore::*}:
 		if {_nl} is not set:
 			add "&8&o%loop-value%" to {_l::*}
@@ -46,6 +101,8 @@ function finalizeItemStats(i: item) :: item:
 	replace all " and " with "" in {_l}
 
 	set lore of {_i} to {_l}
+	
+	set {_i} to {_i} with nbt from "{Unbreakable:1,HideFlags:127}"
 
 	set name of {_i} to "%{i::itemColor::%{i::item::%{_itemName}%::Rarity}%}%%{_itemName}%"
 
@@ -70,97 +127,118 @@ on load:
 
 
 
-
-
-
-
-
 # 
 # Admin Item Examples
 # 
 
 on load:
 
-    # Attributes
-    # Name
-    # Lore
+	clear {i::item::*}
 
-        #Lore
+	# Attributes
+	# Name
+	# Lore
 
-        # [Weapon]
-        # ⌛ Attack Type
-        # ⚔ Damage
-        # ⚡ Speed
-        
-        # [Optional Weapon]
-        # Ability
-        # Ability Desc
-        # MPcost
-        
-        # [Armor]
-        # ♥ Health 
-        # ♣ Defense (raw/per)
-        # ♤ Attack Damage (raw/per)
-        # ⚙ Movement Speed
-        # ✎ XP
-        # ✰ Luck
-        # ☄ Magic
+		#Lore
 
-    #Name of the item
-    #The uncolorsed name must also match the 'item ID' (represented as simply {_i})
-    set {_i} to "Creator's Rock"
-    set {i::item::%{_i}%} to stone named "%{_i}%" with custom model data 1
-    
-    #The attack type/attack function to call
-    set {i::item::%{_i}%::Attack Type} to "Thrust"
+		# [Weapon]
+		# ⌛ Attack Type
+		# ⚔ Damage
+		# ⚡ Speed
+		
+		# [Optional Weapon]
+		# Ability
+		# Ability Desc
+		# MPcost
+		
+		# [Armor]
+		# ♥ Health 
+		# ♣ defence (raw/percent)
+		# ♤ Attack Damage (raw/percent)
+		# ⚙ Movement Speed
+		# ✎ XP
+		# ✰ Luck
+		# ☄ Magic
 
-    #Base damage of the attack
-    set {i::item::%{_i}%::Damage} to 3
+	#Name of the item
+	#The uncolorsed name must also match the 'item ID' (represented as simply {_i})
+	set {_i} to "Creator's Rock"
+	set {i::item::%{_i}%} to stone named "%{_i}%" with custom model data 1
+	
+	#The attack type/attack function to call
+	set {i::item::%{_i}%::Attack Type} to "Thrust"
 
-    #Attack rate
-    set {i::item::%{_i}%::Speed} to 0.8 seconds
+	#Base damage of the attack
+	set {i::item::%{_i}%::Damage} to 3
 
-    #Base range of the attack
-    set {i::item::%{_i}%::Range} to 3
+	#Attack rate
+	set {i::item::%{_i}%::Speed} to 0.8 seconds
 
-
-    #The rarity of the weapon/armor
-    set {i::item::%{_i}%::Rarity} to "Admin"
-
-    #Item's lore
-    add "O wow a stone!" and "Meow" to {i::item::%{_i}%::lore::*}
+	#Base range of the attack
+	set {i::item::%{_i}%::Range} to 3
 
 
-    #Thrust ATK DEMO
-    set {_i} to "Creator's Buckler"
-    set {i::item::%{_i}%} to iron sword named "%{_i}%" with custom model data 1
-    set {i::item::%{_i}%::Attack Type} to "Thrust"
-    set {i::item::%{_i}%::Damage} to 2
-    set {i::item::%{_i}%::Range} to 5
-    set {i::item::%{_i}%::Attack Speed} to 0.3 seconds
-    set {i::item::%{_i}%::Rarity} to "Admin"
-    add "OwO" and "Thrust attack demo" to {i::item::%{_i}%::lore::*}
+	#The rarity of the weapon/armor
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	#Item's lore
+	add "O wow a stone!" and "Meow" to {i::item::%{_i}%::lore::*}
 
 
-    #Swing ATK DEMO
-    set {_i} to "Creator's War Hammer"
-    set {i::item::%{_i}%} to golden shovel named "%{_i}%" with custom model data 1
-    set {i::item::%{_i}%::Attack Type} to "Swing"
-    set {i::item::%{_i}%::Damage} to 4
-    set {i::item::%{_i}%::Range} to 5
-    set {i::item::%{_i}%::Speed} to 0.6 seconds
-    set {i::item::%{_i}%::Rarity} to "Admin"
-    add "HEE-YA!" and "Swing attack demo" to {i::item::%{_i}%::lore::*}
+	#Thrust ATK DEMO
+	set {_i} to "Creator's Buckler"
+	set {i::item::%{_i}%} to iron sword named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Thrust"
+	set {i::item::%{_i}%::Damage} to 2
+	set {i::item::%{_i}%::Range} to 5
+	set {i::item::%{_i}%::Attack Speed} to 0.3 seconds
+	set {i::item::%{_i}%::Rarity} to "Admin"
+	add "OwO" and "Thrust attack demo" to {i::item::%{_i}%::lore::*}
 
-    #Shock ATK DEMO
-    set {_i} to "Creator's Boulder"
-    set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 1
-    set {i::item::%{_i}%::Attack Type} to "Shock"
-    set {i::item::%{_i}%::Damage} to 4
-    set {i::item::%{_i}%::Range} to 5
-    set {i::item::%{_i}%::Attack Speed} to 1 seconds
-    set {i::item::%{_i}%::Rarity} to "Admin"
-    set {i::item::%{_i}%::level} to "0"
-    add "RUHHHHH AAAAHHHH" and "Shock attack demo" to {i::item::%{_i}%::lore::*}
-    set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	#Swing ATK DEMO
+	set {_i} to "Creator's War Hammer"
+	set {i::item::%{_i}%} to golden shovel named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Swing"
+	set {i::item::%{_i}%::Damage} to 4
+	set {i::item::%{_i}%::Range} to 5
+	set {i::item::%{_i}%::Speed} to 0.6 seconds
+	set {i::item::%{_i}%::Rarity} to "Admin"
+	add "HEE-YA!" and "Swing attack demo" to {i::item::%{_i}%::lore::*}
+
+	#Shock ATK DEMO
+	set {_i} to "Creator's Boulder"
+	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Attack Type} to "Shock"
+	set {i::item::%{_i}%::Damage} to 4
+	set {i::item::%{_i}%::Range} to 5
+	set {i::item::%{_i}%::Attack Speed} to 1 seconds
+	set {i::item::%{_i}%::Rarity} to "Admin"
+	set {i::item::%{_i}%::level} to 0
+	add "RUHHHHH AAAAHHHH" and "Shock attack demo" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	#Helmet DEMO
+	set {_i} to "Creator's Fluffy Ears :3"
+	set {i::item::%{_i}%} to diamond helmet named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::Defence} to 2
+	set {i::item::%{_i}%::endurance} to 0.02
+
+	set {i::item::%{_i}%::Max health} to 2
+	set {i::item::%{_i}%::regeneration} to 0.02
+
+	set {i::item::%{_i}%::Speed} to 0.02
+
+	set {i::item::%{_i}%::attack damage} to 2
+	set {i::item::%{_i}%::strength} to 0.02
+	set {i::item::%{_i}%::mysticism} to 0.02
+
+	set {i::item::%{_i}%::xp} to 0.02
+	set {i::item::%{_i}%::gold} to 0.02
+	set {i::item::%{_i}%::scavanger} to 0.02
+	set {i::item::%{_i}%::level} to 0
+	add "Awww :3" and "If someone is wearing these" and "pet them. RIGHT. MEOW." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
 

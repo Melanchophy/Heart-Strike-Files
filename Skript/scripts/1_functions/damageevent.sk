@@ -1,5 +1,6 @@
 on damage of entity:
 
+
 	# Prevents players from attacking entities
 	if attacker is player:
 		if damage cause is an attack or sweep attack:
@@ -10,7 +11,16 @@ on damage of entity:
 	else if victim is player:
 		set damage to getDamage(attacker, victim, damage)
 		
+
+
 	# Display damage
+	
+	if {p::false::%victim's uuid%::debug} is set:
+		send "Attacker %attacker%" to victim
+		send "Damage %damage%" to victim
+		send "Final %final damage%" to victim
+
+
 	loop 3 times:
 		set {_rn::%loop-value%} to random number between 0.2 and -0.2
 	spawn armor stand at event-location ~ vector({_rn::1}, {_rn::2}, {_rn::3}) with nbt compound from "{Invisible:1b,CustomName:'[{""text"":""&c%damage%""}]',NoGravity:1b,CustomNameVisible:1b,NoAI:1b}"
@@ -19,3 +29,4 @@ on damage of entity:
 	set victim's invulnerability ticks to 1
 	wait 19 ticks
 	kill {_di}
+	

@@ -7,3 +7,17 @@ command /debugMode:
 		else:
 			clear {p::false::%Player's uuid%::debug}
 			send "&7You will no longer recieve debugging information for multiple occassions."
+
+command /debugstats:
+	permission: op
+	trigger:
+		send "Armor Attribute %player's generic armor attribute%"
+		send "endurance %{p::false::%player's uuid%::endurance}%"
+		send "Health %Player's health*2%/%player's max health attribute%"
+		send "regeneration %{p::false::%player's uuid%::regeneration}%"
+		send "Speed %player's generic movement speed attribute%"
+		send "Damage Multiplier %{p::false::%player's uuid%::damage multiplier}%"
+		send "Mysticism %{p::false::%player's uuid%::mysticism multiplier}%"
+		send "XP bonus %{p::false::%player's uuid%::xp multiplier}%"
+		send "Money Bonus %{p::false::%player's uuid%::gold multiplier}%"
+		send "Scavager %{p::false::%player's uuid%::scavanger multiplier}%"

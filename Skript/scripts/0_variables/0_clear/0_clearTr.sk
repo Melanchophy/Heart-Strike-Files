@@ -31,5 +31,3 @@ on load:
     # Any hard variables such as items used in events
     clear {i::*}
     clear {p::false::*}
-    
-

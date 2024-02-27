@@ -1,3 +1,16 @@
 function getDamage(attacker: entity, victim: entity, baseDMG: number) :: number:
-	set {_dmg} to {_baseDMG}
-	return {_dmg}
+
+	# The armor must be set as a variable beforehand otherwise {_damage} will be set as <none>. (':
+	set {_armor} to {_victim}'s generic armor attribute
+
+	set {_damage} to {_baseDMG} - {_armor}
+	if {p::false::%{_victim}'s uuid%::debug} is set:
+		send "%{_damage}%" to {_victim}
+
+	set {_damage} to {_damage} / (1 + {p::false::%{_victim}'s uuid%::endurance})
+	if {p::false::%{_victim}'s uuid%::debug} is set:
+		send "%{_damage}%" to {_victim}
+
+	if {_damage} is not greater than 0.5:
+		set {_damage} to 0.5
+	return {_damage}
