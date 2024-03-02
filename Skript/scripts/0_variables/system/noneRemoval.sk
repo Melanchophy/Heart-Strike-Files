@@ -5,9 +5,23 @@ on load:
 	add "level" to {i::genericPlayerStats::*}
 	add "xp" to {i::genericPlayerStats::*}
 
+	clear {i::genericPlayerMultipliers::*}
+	add "money multiplier" to {i::genericPlayerMultipliers::*}
+	add "xp multiplier" to {i::genericPlayerMultipliers::*}
+	add "scavanger multiplier" to {i::genericPlayerMultipliers::*}
+	add "mysticism multiplier" to {i::genericPlayerMultipliers::*}
+	add "damage multiplier" to {i::genericPlayerMultipliers::*}
+	add "regeneration" to {i::genericPlayerMultipliers::*}
+	add "endurance" to {i::genericPlayerMultipliers::*}
+
 on disconnect:
 	loop {i::genericPlayerStats::*}:
 		if {p::false::%player's uuid%::%loop-value%} is 0:
+			clear {p::false::%player's uuid%::%loop-value%}
+	clear {p::false::%player's uuid%::*}
+
+	loop {i::genericPlayerMultipliers::*}:
+		if {p::false::%player's uuid%::%loop-value%} is 1:
 			clear {p::false::%player's uuid%::%loop-value%}
 	clear {p::false::%player's uuid%::*}
 
@@ -15,3 +29,7 @@ on join:
 	loop {i::genericPlayerStats::*}:
 		if {p::false::%player's uuid%::%loop-value%} is not set:
 			set {p::false::%player's uuid%::%loop-value%} to 0
+
+	loop {i::genericPlayerMultipliers::*}:
+		if {p::false::%player's uuid%::%loop-value%} is not set:
+			set {p::false::%player's uuid%::%loop-value%} to 1

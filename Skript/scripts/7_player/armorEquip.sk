@@ -27,7 +27,7 @@ function armorEquip(p: player, itemName: text, n: number):
 	
 	add ({i::item::%{_itemName}%::mysticism} * {_n}) to {p::false::%{_p}'s uuid%::mysticism multiplier}
 	add ({i::item::%{_itemName}%::xp} * {_n}) to {p::false::%{_p}'s uuid%::xp multiplier}
-	add ({i::item::%{_itemName}%::gold} * {_n}) to {p::false::%{_p}'s uuid%::gold multiplier}
+	add ({i::item::%{_itemName}%::money} * {_n}) to {p::false::%{_p}'s uuid%::money multiplier}
 	add ({i::item::%{_itemName}%::scavanger} * {_n}) to {p::false::%{_p}'s uuid%::scavanger multiplier}
 	
 on join:

@@ -1,0 +1,9 @@
+on death:
+	if victim is instanceof activemob:
+
+		set {_attackers::*} to {e::%victim's uuid%::attackers::*}
+		set {_attackersDamage::*} to {e::%victim's uuid%::attackers::%{e::%victim's uuid%::attackers::*}'s uuid%::damage}
+
+		loop {_attackers::*}:
+			moneyGrant(loop-value, ceil({i::enemy::%uncolored name of victim%::money}*{p::false::%loop-value's uuid%::money multiplier} / amount of indexes of {_attackers::*}))
+			xpGrant(loop-value, ceil({i::enemy::%uncolored name of victim%::xp}*{p::false::%loop-value's uuid%::xp multiplier} / amount of indexes of {_attackers::*}))

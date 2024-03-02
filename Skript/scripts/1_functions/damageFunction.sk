@@ -11,6 +11,12 @@ function getDamage(attacker: entity, victim: entity, baseDMG: number) :: number:
 	if {p::false::%{_victim}'s uuid%::debug} is set:
 		send "%{_damage}%" to {_victim}
 
+	if {_victim} is instanceof activemob:
+		if type of {_attacker} is a player:
+			if {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%} is not set:
+				set {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%} to {_attacker}
+			add {_damage} to {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%::damage}
+
 	if {_damage} is not greater than 0.5:
 		set {_damage} to 0.5
 	return {_damage}

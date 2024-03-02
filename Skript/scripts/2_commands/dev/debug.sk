@@ -19,5 +19,5 @@ command /debugstats:
 		send "Damage Multiplier %{p::false::%player's uuid%::damage multiplier}%"
 		send "Mysticism %{p::false::%player's uuid%::mysticism multiplier}%"
 		send "XP bonus %{p::false::%player's uuid%::xp multiplier}%"
-		send "Money Bonus %{p::false::%player's uuid%::gold multiplier}%"
+		send "Money Bonus %{p::false::%player's uuid%::money multiplier}%"
 		send "Scavager %{p::false::%player's uuid%::scavanger multiplier}%"

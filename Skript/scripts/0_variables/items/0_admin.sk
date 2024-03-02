@@ -223,21 +223,21 @@ on load:
 	set {i::item::%{_i}%} to diamond helmet named "%{_i}%" with custom model data 1
 	set {i::item::%{_i}%::Rarity} to "Admin"
 
-	set {i::item::%{_i}%::Defence} to 2
-	set {i::item::%{_i}%::endurance} to 0.02
+	set {i::item::%{_i}%::Defence} to 10
+	set {i::item::%{_i}%::endurance} to 0.5
 
-	set {i::item::%{_i}%::Max health} to 2
-	set {i::item::%{_i}%::regeneration} to 0.02
+	set {i::item::%{_i}%::Max health} to 20
+	set {i::item::%{_i}%::regeneration} to 0.5
 
-	set {i::item::%{_i}%::Speed} to 0.02
+	set {i::item::%{_i}%::Speed} to 1
 
 	set {i::item::%{_i}%::attack damage} to 2
-	set {i::item::%{_i}%::strength} to 0.02
-	set {i::item::%{_i}%::mysticism} to 0.02
+	set {i::item::%{_i}%::strength} to 1
+	set {i::item::%{_i}%::mysticism} to 1
 
-	set {i::item::%{_i}%::xp} to 0.02
-	set {i::item::%{_i}%::gold} to 0.02
-	set {i::item::%{_i}%::scavanger} to 0.02
+	set {i::item::%{_i}%::xp} to 1
+	set {i::item::%{_i}%::money} to 1
+	set {i::item::%{_i}%::scavanger} to 1
 	set {i::item::%{_i}%::level} to 0
 	add "Awww :3" and "If someone is wearing these" and "pet them. RIGHT. MEOW." to {i::item::%{_i}%::lore::*}
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})

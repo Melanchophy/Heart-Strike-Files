@@ -9,3 +9,4 @@ ice4:
   MobLevel: '1'
   Cooldown: 0
   Warmup: 0
+  ActiveMobs: 1

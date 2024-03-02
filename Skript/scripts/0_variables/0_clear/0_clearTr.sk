@@ -26,8 +26,13 @@ on load:
     # These are NEVER reset as they contain external factors.
     # Such of which will contain player purchases.
     #
+    # {e::%enemy's uuid%::*}
+    # Temporary Entity Variables
+    # Just like Internal Variables and are cleared whenever they are no longer needed.
+    #
 
     # Clearing all the temporary variables and server,
     # Any hard variables such as items used in events
+    clear {e::*}
     clear {i::*}
     clear {p::false::*}

@@ -1,0 +1,5 @@
+on load:
+	set {_enemy} to "Living Ice Yield"
+	set {i::enemy::%{_enemy}%::xp} to 3
+	set {i::enemy::%{_enemy}%::level} to 1
+	set {i::enemy::%{_enemy}%::money} to 2

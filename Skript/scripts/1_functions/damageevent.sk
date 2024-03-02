@@ -14,12 +14,6 @@ on damage of entity:
 
 
 	# Display damage
-	
-	if {p::false::%victim's uuid%::debug} is set:
-		send "Attacker %attacker%" to victim
-		send "Damage %damage%" to victim
-		send "Final %final damage%" to victim
-
 
 	loop 3 times:
 		set {_rn::%loop-value%} to random number between 0.2 and -0.2
