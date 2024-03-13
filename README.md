@@ -43,6 +43,13 @@ Here are the steps to create and join your own instance of Heart Strike:
     3. Unzip the world download file from Mega directly into the server's folder `*/`.
     4. Follow step `2-3` again. The server should be online and you can join it in game using the IP address `0`.
 
+# How to Update
+Here are the steps on updating the server if you already have one up and running:
+1. Download the latest world file (I will include version names so you can check if you have the most up-to-date file already).
+    - Unzip the world file in `*/` and replace the old world.
+2. At the top of this page click `Code` > `Download ZIP`
+    - Unzip the ZIP file in `*/plugins/` and replace the old files.
+
 ## Special Thanks To...
 - Raspi_Dude, for providing a host to one of the instances (24/02/2024-Present). 
 
