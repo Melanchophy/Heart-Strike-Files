@@ -11,6 +11,7 @@ on armor change:
 
 
 function armorEquip(p: player, itemName: text, n: number):
+
 	add {i::item::%{_itemName}%::defence} * {_n} to {_p}'s generic armor attribute
 	add ({i::item::%{_itemName}%::endurance}) * {_n} to {p::false::%{_p}'s uuid%::endurance}
 	
@@ -18,17 +19,17 @@ function armorEquip(p: player, itemName: text, n: number):
 	if {_n} is less than 0:
 		if {_p}'s health is greater than {_p}'s max health:
 			set {_p}'s health to {_p}'s max health
-	
+
 	add ({i::item::%{_itemName}%::regeneration}) * {_n} to {p::false::%{_p}'s uuid%::regeneration}
 	add ({i::item::%{_itemName}%::Speed}/10)* {_n} to {_p}'s generic movement speed attribute
 
-	add ({i::item::%{_itemName}%::attack damage} * {_n}) to {p::false::%{_p}'s uuid%::damage}
-	add ({i::item::%{_itemName}%::strength} * {_n}) to {p::false::%{_p}'s uuid%::damage multiplier}
+	add ({i::item::%{_itemName}%::attack damage} * {_n}) to {_p}'s generic attack damage attribute
+	add ({i::item::%{_itemName}%::strength} * {_n}) to {p::false::%{_p}'s uuid%::strength}
 	
-	add ({i::item::%{_itemName}%::mysticism} * {_n}) to {p::false::%{_p}'s uuid%::mysticism multiplier}
-	add ({i::item::%{_itemName}%::xp} * {_n}) to {p::false::%{_p}'s uuid%::xp multiplier}
-	add ({i::item::%{_itemName}%::money} * {_n}) to {p::false::%{_p}'s uuid%::money multiplier}
-	add ({i::item::%{_itemName}%::scavanger} * {_n}) to {p::false::%{_p}'s uuid%::scavanger multiplier}
+	add ({i::item::%{_itemName}%::mysticism} * {_n}) to {p::false::%{_p}'s uuid%::mysticism}
+	add ({i::item::%{_itemName}%::experience} * {_n}) to {p::false::%{_p}'s uuid%::experience}
+	add ({i::item::%{_itemName}%::scavenger} * {_n}) to {p::false::%{_p}'s uuid%::scavenger}
+	add ({i::item::%{_itemName}%::luck} * {_n}) to {p::false::%{_p}'s uuid%::luck}
 	
 on join:
 	set player's generic max health attribute to 20
@@ -46,5 +47,5 @@ on join:
 	#Mysticism (%)
 	#Xp (%)
 	#Gold (%)
-	#Scavanger (%)
+	#scavenger (%)
 	#Level

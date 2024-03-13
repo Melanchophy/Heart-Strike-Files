@@ -1,0 +1,11 @@
+boulder:
+  MobName: boulder
+  World: heart_strike
+  X: 1095
+  Y: 15
+  Z: -58
+  Yaw: 0.0
+  Pitch: 0.0
+  MobLevel: '1'
+  MaxMobs: '7'
+  Radius: 7.0

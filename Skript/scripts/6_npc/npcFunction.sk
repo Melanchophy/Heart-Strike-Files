@@ -30,9 +30,12 @@ function NPCtalkbrain(p: player, npc: text, progressed: boolean):
 					set {_dialogueIndex} to random integer between 1 and number of indexes of {i::npc::%{_npc}%::dialogue::*}
 			set {p::false::%{_p}'s uuid%::%{_npc}%} to {_dialogueIndex}
 
+			if {p::false::%{_p}'s uuid%::debug} is set:
+				send {_dialogueIndex} to {_p}
+				send {i::npc::%{_npc}%::dialogue::%{_dialogueIndex}%} to {_p}
+
 			# Text Manager
-			
-			set {_t} to "%nl%&a%{_npc}%&f &8»&f %{i::npc::%{_npc}%::dialogue::%{_dialogueIndex}%}%%nl%"
+			set {_text} to {i::npc::%{_npc}%::dialogue::%{_dialogueIndex}%}
 			
 			# Sound Manager
 			if {p::false::%{_p}'s uuid%::resourcepack} is not set:
@@ -82,8 +85,8 @@ function NPCtalkbrain(p: player, npc: text, progressed: boolean):
 
 		set {_text} to "%nl%&a%{_npc}%&f &8»&f %{_text}%%nl%"
 
-		if {p::false::%{_p}'s uuid%::heroName} exists:
-			replace all "<player>" with "&o%{p::false::%{_p}'s uuid%::heroName}%&f" in {_text}
+		if {p::true::%{_p}'s uuid%::heroName} exists:
+			replace all "<player>" with "&o%{p::true::%{_p}'s uuid%::heroName}%&f" in {_text}
 		else:
 			replace all "<player>" with "&o%{_p}'s name%&f" in {_text}
 

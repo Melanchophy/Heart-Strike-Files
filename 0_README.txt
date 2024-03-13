@@ -72,22 +72,3 @@ I touched it one time, it felt nice.
 
 You
 Yes, you! We see you behind that screen! And if we see you do that thing one more time again... we're gonna hug you, because maybe you haven't experienced much affection in your life. Don't worry, we're here for you when you need us.
-
-
-
-
-== Unrelated ==
-
-People with autism are four times more likely to experience depression than those who are neurotypical. One of the strongest predictors of depression is loneliness. Since individuals high in the autism spectrum are more at risk of isolating themselves, they may have more depression triggers.
-
-
-Your path leads to darkness, a realm devoid of empathy and understanding. You may pulse with power, but it is the spark of compassion that truly illuminates the soul. In your quest for dominance, do not forget the fragility of those you tread upon. Every life, carries within it the potential for greatness. Embrace the light that resides within you, don't let it free, for it is through kindness and empathy that you will find true fulfillment. Turn back now, before it is too late, and let love guide your journey instead of the cold grasp of control.
-
-
-
-
-
-
-
-
-

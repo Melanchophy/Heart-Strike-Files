@@ -5,5 +5,5 @@ command /tablist:
  
 
 function tablistReload(p: player):
-	set tablist header of {_p} to "%nl%%{_i}%%nl%%nl%&0&n &m❤&0&n &lHeart Strike&0&n &m❤&0&n %nl%"
-	set tablist footer of {_p} to "%nl%&7Tps: %2nd element of tps%%nl%&7Players %number of online players%/%max players%%nl%&7IP: &N%{i::ip}%%nl%&n&r%nl%%{_i}%%nl%"
+	set tablist header of {_p} to "%nl%%{i::tablistBanner}%%nl%%nl%&0&n &m❤&c&n &lHeart Strike&0&n &m❤&0&n %nl%"
+	set tablist footer of {_p} to "%nl%&7Tps: %2nd element of tps%%nl%&7Players %number of online players%/%max players%%nl%&7IP: &N%{i::ip}%%nl%&n&r%nl%%{i::tablistBanner}%%nl%"

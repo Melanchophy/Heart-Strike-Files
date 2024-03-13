@@ -1,0 +1,9 @@
+command /home:
+    cooldown: 3 seconds
+    trigger:
+        send "&cYou have no home to return to..."
+
+command /sethome:
+    cooldown: 3 seconds
+    trigger:
+        send "&cWhy would you want to do that here..."

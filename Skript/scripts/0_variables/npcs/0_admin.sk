@@ -2,13 +2,8 @@ on load:
 	set {_npc} to "Melany"
 	clear {i::npc::%{_npc}%::*}
 	set {i::npc::%{_npc}%::dialogue::1::1} to "Hi, I would like to purchase..."
-	set {i::npc::%{_npc}%::dialogue::1::2} to "A cake! Yes..."
-	set {i::npc::%{_npc}%::dialogue::1::3} to "Bring to me one cake. For the love god!"
+	set {i::npc::%{_npc}%::dialogue::1::2} to "Just kidding. I'm still programming some stuffs."
+	set {i::npc::%{_npc}%::dialogue::1::3} to "So for now, I'll allow non-developer players to use a couple of developer commands."
 
-	set {i::npc::%{_npc}%::dialogue::2::1} to "Yay!"
-	set {i::npc::%{_npc}%::dialogue::2::2} to "Yipee!"
-	set {i::npc::%{_npc}%::dialogue::2::3} to "I knew you could do it!"
-
-	add "entity.villager.celebrate" to {i::npc::%{_npc}%::talksound::*}
-	add "entity.villager.ambient" to {i::npc::%{_npc}%::talksound::*}
-	add "entity.cat.purreow" to {i::npc::%{_npc}%::talksound::*}
+	set {i::npc::%{_npc}%::dialogue::2::1} to "Here's commands you are able to use in this version:"
+	set {i::npc::%{_npc}%::dialogue::2::2} to "/debugmode, /debugstats, /reset <INDEX>"

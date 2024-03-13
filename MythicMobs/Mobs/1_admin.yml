@@ -31,3 +31,41 @@ iceYield:
   - clear
   - meleeattack
   - randomstroll
+
+boulder:
+  Type: zombie
+  Display: '&cLiving Boulder'
+  Health: 30
+  Damage: 12
+  Equipment:
+  - IRON_CHESTPLATE CHEST
+  - AIR HAND
+  LevelModifiers:
+  - health 5
+  - damage 0.5
+  Options:
+    MovementSpeed: 0.2
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+
+kabelo:
+  Type: iron_golem
+  Display: '&cOMG ITS KABELO'
+  Health: 300
+  Damage: 40
+  Equipment:
+  - AIR HAND
+  LevelModifiers:
+  - health 5
+  - damage 0.5
+  Options:
+    MovementSpeed: 0.3
+  AIGoalSelectors:
+  - clear
+  - meleeattack
+  - randomstroll
+  AITargetSelectors:
+  - player
+  - zombie

@@ -1,0 +1,152 @@
+on load:
+	set {_i} to "Icy Cap"
+	set {i::item::%{_i}%} to leather helmet named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.04
+	set {i::item::%{_i}%::Rarity} to "Common"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "A helmet which may melt all over you." and "Be careful while wearing." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Icy Noodlevest"
+	set {i::item::%{_i}%} to leather chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.04
+	set {i::item::%{_i}%::Rarity} to "Uncommon"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "You can't eat this." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Icy Leggings"
+	set {i::item::%{_i}%} to leather leggings named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.04
+	set {i::item::%{_i}%::Rarity} to "Uncommon"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "Stop licking me." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Icy Boots"
+	set {i::item::%{_i}%} to leather boots named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.1
+	set {i::item::%{_i}%::experience} to 0.1
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "I SAID STOP!" and "Please!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	set {_i} to "Hollow Rock"
+	set {i::item::%{_i}%} to chainmail helmet named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.1
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "Rock armor!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Odd Rock"
+	set {i::item::%{_i}%} to iron chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "Rock armor!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Long Rock"
+	set {i::item::%{_i}%} to iron leggings named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "Rock armor!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Comfy Rock"
+	set {i::item::%{_i}%} to iron boots named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 1
+	set {i::item::%{_i}%::endurance} to 0.1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::speed} to -0.3
+	set {i::item::%{_i}%::Rarity} to "Rare"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "Rock armor!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	set {_i} to "Metal Helmet"
+	set {i::item::%{_i}%} to netherite helmet named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 10
+	set {i::item::%{_i}%::endurance} to 0.25
+	set {i::item::%{_i}%::Attack Damage} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::speed} to -0.25
+	set {i::item::%{_i}%::Rarity} to "Legendary"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "An armor set which is super metal." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Metal Chestplate"
+	set {i::item::%{_i}%} to netherite chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 10
+	set {i::item::%{_i}%::endurance} to 0.25
+	set {i::item::%{_i}%::Attack Damage} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::speed} to -0.25
+	set {i::item::%{_i}%::Rarity} to "Legendary"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "An armor set which is super metal." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Metal Leggings"
+	set {i::item::%{_i}%} to netherite leggings named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 10
+	set {i::item::%{_i}%::endurance} to 0.25
+	set {i::item::%{_i}%::Attack Damage} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::speed} to -0.25
+	set {i::item::%{_i}%::Rarity} to "Legendary"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "An armor set which is super metal." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+	set {_i} to "Metal Boots"
+	set {i::item::%{_i}%} to netherite boots named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Defence} to 10
+	set {i::item::%{_i}%::endurance} to 0.25
+	set {i::item::%{_i}%::Attack Damage} to 1
+	set {i::item::%{_i}%::strength} to 0.2
+	set {i::item::%{_i}%::speed} to -0.25
+	set {i::item::%{_i}%::Rarity} to "Legendary"
+	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
+	add "An armor set which is super metal." to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+
+	set {_i} to "BOOMINATOR"
+	set {i::item::%{_i}%} to netherite shovel named "%{_i}%" with custom model data 100
+	set {i::item::%{_i}%::Attack Type} to "Missile"
+	set {i::item::%{_i}%::Damage} to 10
+	set {i::item::%{_i}%::Range} to 20
+	set {i::item::%{_i}%::Attack Speed} to 0.2 seconds
+	set {i::item::%{_i}%::Rarity} to "Admin"
+	set {i::item::%{_i}%::level} to 0
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})

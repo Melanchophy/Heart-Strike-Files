@@ -23,6 +23,4 @@ on right click on entity:
 					if {i::npc::%{_npc}%::dialogue::%{_block}%::%{_line}+1%} is not set:
 				
 						if {_block} = 1:
-							if player's inventory contains cake:
-								remove 1 cake from player's inventory
-								clear {p::false::%player's uuid%::npcCanProgress::%{_npc}%}
+							clear {p::false::%player's uuid%::npcCanProgress::%{_npc}%}

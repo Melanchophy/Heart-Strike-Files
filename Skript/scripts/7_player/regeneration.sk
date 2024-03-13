@@ -1,6 +1,9 @@
 on heal:
 	if heal reason is satiated:
 		cancel event
-		heal player by 0.5 + (0.5*{p::false::%player's uuid%::regeneration})
+		heal player by 0.5 * {p::false::%player's uuid%::regeneration}
 	else:
-		set heal amount to heal amount + (heal amount*{p::false::%player's uuid%::regeneration})
+		set heal amount to heal amount*({p::false::%player's uuid%::regeneration}/2)
+
+on hunger bar change:
+	cancel event

@@ -16,7 +16,7 @@ on death:
 				
 					set {_s} to {_n}th element of {tr::enemy::%uncolored name of victim%::dropchance::*}
 					
-					chance of 1 / ({_s} / (1+{p::false::%loop-value-1's uuid%::scavanger multiplier})):
+					chance of 1 / ({_s} / (1+{p::false::%loop-value-1's uuid%::scavenger multiplier})):
 						dropItem({_attackers::%loop-index-1%}, uncolored name of {_n}th element of {tr::enemy::%uncolored name of victim%::dropItem::*})
 					add 1 to {_n}
 	

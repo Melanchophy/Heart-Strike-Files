@@ -1,6 +1,6 @@
 on load:
 	set {_i} to "Nice Rock"
-	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Swing"
 	set {i::item::%{_i}%::Damage} to 2
 	set {i::item::%{_i}%::Range} to 2.5
@@ -11,7 +11,7 @@ on load:
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
 
 	set {_i} to "Brick"
-	set {i::item::%{_i}%} to brick named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to brick named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Thrust"
 	set {i::item::%{_i}%::Damage} to 4
 	set {i::item::%{_i}%::Range} to 4
@@ -22,7 +22,7 @@ on load:
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
 
 	set {_i} to "Dangerous Rock"
-	set {i::item::%{_i}%} to cobblestone named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to cobblestone named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Swing"
 	set {i::item::%{_i}%::Damage} to 4
 	set {i::item::%{_i}%::Range} to 3.5
@@ -33,12 +33,12 @@ on load:
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
 
 	set {_i} to "Heavy Helmet"
-	set {i::item::%{_i}%} to leather helmet named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to leather helmet named "%{_i}%" with custom model data 2
 	set {i::item::%{_i}%::Defence} to 2
 	set {i::item::%{_i}%::endurance} to 0.05
 	set {i::item::%{_i}%::Rarity} to "Common"
 
-
 	set {i::item::%{_i}%::level} to 0
+	clear {i::item::%{_i}%::lore::*}
 	add "Armor" and "Don't eat me! ):" to {i::item::%{_i}%::lore::*}
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})

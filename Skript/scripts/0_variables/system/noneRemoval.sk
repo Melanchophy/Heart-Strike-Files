@@ -4,15 +4,15 @@ on load:
 	add "money" to {i::genericPlayerStats::*}
 	add "level" to {i::genericPlayerStats::*}
 	add "xp" to {i::genericPlayerStats::*}
+	add "endurance" to {i::genericPlayerStats::*}
+	add "strength" to {i::genericPlayerStats::*}
 
 	clear {i::genericPlayerMultipliers::*}
-	add "money multiplier" to {i::genericPlayerMultipliers::*}
-	add "xp multiplier" to {i::genericPlayerMultipliers::*}
-	add "scavanger multiplier" to {i::genericPlayerMultipliers::*}
-	add "mysticism multiplier" to {i::genericPlayerMultipliers::*}
-	add "damage multiplier" to {i::genericPlayerMultipliers::*}
+	add "luck" to {i::genericPlayerMultipliers::*}
+	add "experience" to {i::genericPlayerMultipliers::*}
+	add "scavenger" to {i::genericPlayerMultipliers::*}
+	add "mysticism" to {i::genericPlayerMultipliers::*}
 	add "regeneration" to {i::genericPlayerMultipliers::*}
-	add "endurance" to {i::genericPlayerMultipliers::*}
 
 on disconnect:
 	loop {i::genericPlayerStats::*}:

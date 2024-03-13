@@ -1,7 +1,7 @@
 # Stop players from interacting with the environment if they have a custom item
 
 on click:
-	if custom model data of player's tool > 0:
+	if custom model data of player's tool > 99:
 		cancel event
 
 
@@ -21,7 +21,7 @@ function finalizeItemStats(i: item) :: item:
 
 	set {_stat} to "damage"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
-		add "&c⚔ &7%{i::item::%{_itemName}%::%{_stat}%}% Base %{_stat}%%nl%" to {_l::*}
+		add "&c🗡 &7%{i::item::%{_itemName}%::%{_stat}%}% Base %{_stat}%%nl%" to {_l::*}
 
 	set {_stat} to "attack speed"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
@@ -57,7 +57,7 @@ function finalizeItemStats(i: item) :: item:
 
 	set {_stat} to "attack damage"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
-		add "&4☀ &7+%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
+		add "&4⚔ &7+%{i::item::%{_itemName}%::%{_stat}%}% %{_stat}%%nl%" to {_l::*}
 
 	set {_stat} to "strength"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
@@ -71,11 +71,11 @@ function finalizeItemStats(i: item) :: item:
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&d✿ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
 
-	set {_stat} to "gold"
+	set {_stat} to "scavenger"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&e★ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
 
-	set {_stat} to "scavanger"
+	set {_stat} to "luck"
 	if {i::item::%{_itemName}%::%{_stat}%} exists:
 		add "&6☆ &7+%{i::item::%{_itemName}%::%{_stat}%}*100%%% %{_stat}%%nl%" to {_l::*}
 
@@ -163,7 +163,7 @@ on load:
 	#Name of the item
 	#The uncolorsed name must also match the 'item ID' (represented as simply {_i})
 	set {_i} to "Creator's Rock"
-	set {i::item::%{_i}%} to stone named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to stone named "%{_i}%" with custom model data 100
 	
 	#The attack type/attack function to call
 	set {i::item::%{_i}%::Attack Type} to "Thrust"
@@ -187,7 +187,7 @@ on load:
 
 	#Thrust ATK DEMO
 	set {_i} to "Creator's Buckler"
-	set {i::item::%{_i}%} to iron sword named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to iron sword named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Thrust"
 	set {i::item::%{_i}%::Damage} to 2
 	set {i::item::%{_i}%::Range} to 5
@@ -198,7 +198,7 @@ on load:
 
 	#Swing ATK DEMO
 	set {_i} to "Creator's War Hammer"
-	set {i::item::%{_i}%} to golden shovel named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to golden shovel named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Swing"
 	set {i::item::%{_i}%::Damage} to 4
 	set {i::item::%{_i}%::Range} to 5
@@ -208,7 +208,7 @@ on load:
 
 	#Shock ATK DEMO
 	set {_i} to "Creator's Boulder"
-	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to diamond named "%{_i}%" with custom model data 100
 	set {i::item::%{_i}%::Attack Type} to "Shock"
 	set {i::item::%{_i}%::Damage} to 4
 	set {i::item::%{_i}%::Range} to 5
@@ -220,7 +220,7 @@ on load:
 
 	#Helmet DEMO
 	set {_i} to "Creator's Fluffy Ears :3"
-	set {i::item::%{_i}%} to diamond helmet named "%{_i}%" with custom model data 1
+	set {i::item::%{_i}%} to diamond helmet named "%{_i}%" with custom model data 2
 	set {i::item::%{_i}%::Rarity} to "Admin"
 
 	set {i::item::%{_i}%::Defence} to 10
@@ -237,8 +237,85 @@ on load:
 
 	set {i::item::%{_i}%::xp} to 1
 	set {i::item::%{_i}%::money} to 1
-	set {i::item::%{_i}%::scavanger} to 1
+	set {i::item::%{_i}%::scavenger} to 1
 	set {i::item::%{_i}%::level} to 0
 	add "Awww :3" and "If someone is wearing these" and "pet them. RIGHT. MEOW." to {i::item::%{_i}%::lore::*}
 	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
 
+
+
+	#Chestplate Defence DEMO
+	set {_i} to "Defence Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::Defence} to 10
+
+	set {i::item::%{_i}%::level} to 0
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	#Chestplate Endurance DEMO
+	set {_i} to "Endurance Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::endurance} to 0.5
+	set {i::item::%{_i}%::level} to 0
+
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	#Chestplate Attack Damage DEMO
+	set {_i} to "Attack Damage Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::attack damage} to 2
+	set {i::item::%{_i}%::level} to 0
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	#Chestplate Strength DEMO
+	set {_i} to "Strength Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::strength} to 1
+
+	set {i::item::%{_i}%::level} to 0
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	#Chestplate XP Money scavenger DEMO
+	set {_i} to "Greed Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::experience} to 1
+	set {i::item::%{_i}%::scavenger} to 1
+	set {i::item::%{_i}%::luck} to 1
+	set {i::item::%{_i}%::level} to 0
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})
+
+
+
+	#Chestplate Level DEMO
+	set {_i} to "Level Test :3"
+	set {i::item::%{_i}%} to diamond chestplate named "%{_i}%" with custom model data 2
+	set {i::item::%{_i}%::Rarity} to "Admin"
+
+	set {i::item::%{_i}%::Max Health} to 1
+
+	set {i::item::%{_i}%::level} to 3
+	add "A test for" and "... Which ever stat is in the item name!" to {i::item::%{_i}%::lore::*}
+	set {i::item::%{_i}%} to finalizeItemStats({i::item::%{_i}%})

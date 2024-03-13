@@ -1,22 +1,20 @@
 function getDamage(attacker: entity, victim: entity, baseDMG: number) :: number:
 
-	# The armor must be set as a variable beforehand otherwise {_damage} will be set as <none>. (':
+	# The armor must be set as a variable beforehand otherwise {_finalDamage} will be set as <none>. (':
 	set {_armor} to {_victim}'s generic armor attribute
 
-	set {_damage} to {_baseDMG} - {_armor}
-	if {p::false::%{_victim}'s uuid%::debug} is set:
-		send "%{_damage}%" to {_victim}
+	set {_finalDamage} to {_baseDMG} * (1+{p::false::%{_attacker}'s uuid%::strength})
+	set {_finalDamage} to {_finalDamage} - {_armor}
 
-	set {_damage} to {_damage} / (1 + {p::false::%{_victim}'s uuid%::endurance})
-	if {p::false::%{_victim}'s uuid%::debug} is set:
-		send "%{_damage}%" to {_victim}
+	set {_finalDamage} to {_finalDamage} / (1+{p::false::%{_victim}'s uuid%::endurance})
+
 
 	if {_victim} is instanceof activemob:
 		if type of {_attacker} is a player:
 			if {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%} is not set:
 				set {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%} to {_attacker}
-			add {_damage} to {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%::damage}
+			add {_finalDamage} to {e::%{_victim}'s uuid%::attackers::%{_attacker}'s uuid%::damage}
 
-	if {_damage} is not greater than 0.5:
-		set {_damage} to 0.5
-	return {_damage}
+	if {_finalDamage} is not greater than 0.5:
+		set {_finalDamage} to 0.5
+	return {_finalDamage}
