@@ -19,3 +19,57 @@ on load:
 	add "heartstrike:npc/gay/tea" to {i::npc::%{_npc}%::talksoundRP::*}
 	add "heartstrike:npc/gay/goodmorning" to {i::npc::%{_npc}%::talksoundRP::*}
 	add "heartstrike:npc/gay/turningred" to {i::npc::%{_npc}%::talksoundRP::*}
+
+
+
+	set {_npc} to "Manjaro"
+	clear {i::npc::%{_npc}%::*}
+	add "Good evening. You look odd in quite a way I can't describe." to {i::npc::%{_npc}%::dialogue::*}
+	add "Are you perhaps one of those free from the boundaries?" to {i::npc::%{_npc}%::dialogue::*}
+	add "Truly a spiffing time to be around. We've been around for 48 days. I've counted!" to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Lola"
+	clear {i::npc::%{_npc}%::*}
+	add "Heeya hya hya!" to {i::npc::%{_npc}%::dialogue::*}
+	add "Axe! Axe! Axe! Axe. Axe? Axe!" to {i::npc::%{_npc}%::dialogue::*}
+	add "Would you like to be my next experiment? Interact with this new device I made!" to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Emma"
+	clear {i::npc::%{_npc}%::*}
+	add "Sup?" to {i::npc::%{_npc}%::dialogue::*}
+	add "I love you." to {i::npc::%{_npc}%::dialogue::*}
+	add "My sister is annoying." to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Bella"
+	clear {i::npc::%{_npc}%::*}
+	add "I like you." to {i::npc::%{_npc}%::dialogue::*}
+	add "Wassup?" to {i::npc::%{_npc}%::dialogue::*}
+	add "My sister is annoying." to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Daisy"
+	clear {i::npc::%{_npc}%::*}
+	add "Flowers are so pretty... I wish I could dance in the wind flawlessly like they do." to {i::npc::%{_npc}%::dialogue::*}
+	add "You look pretty <player>. I haven't seen anybody like you before." to {i::npc::%{_npc}%::dialogue::*}
+	add "I love your hair!" to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Kali"
+	clear {i::npc::%{_npc}%::*}
+	add "Pray." to {i::npc::%{_npc}%::dialogue::*}
+	add "The flowers of this chamber illuminate our darkened hearts!" to {i::npc::%{_npc}%::dialogue::*}
+	add "Rejoice!" to {i::npc::%{_npc}%::dialogue::*}
+
+
+
+	set {_npc} to "Calytrix"
+	clear {i::npc::%{_npc}%::*}
+	add "Meow... I don't know. I don't have dialogue yet" to {i::npc::%{_npc}%::dialogue::*}

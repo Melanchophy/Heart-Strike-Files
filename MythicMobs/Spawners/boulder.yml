@@ -9,3 +9,5 @@ boulder:
   MobLevel: '1'
   MaxMobs: '7'
   Radius: 7.0
+  Cooldown: 0
+  Warmup: 0

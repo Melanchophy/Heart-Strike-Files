@@ -6,29 +6,38 @@ There are many benifits to making a Minecraft server open source:
 2. You can play on a private instance and modify your version of server files as you wish.
 3. The server, or game, is preserved for longer if the official instances shut down.
 
+![Image](/YouMayNotNeedThis/Heart%20Strike.webp)
+
+## Contact Me/The Community
+If you are interested in the project or would like to get in touch, you can message or join me on Discord, my username is `Melanchophy` (Pronounced "Melan Coffee") and the invitation link to my Discord server is here:
+
+[__💙 Parliament of Owls 💙__](https://discord.gg/fQUzhGpf3a)
+
+[![Image](/YouMayNotNeedThis/Parliment%20of%20Owls.webp)](https://discord.gg/fQUzhGpf3a)
+
 # How to Play / Create Your Own Instance
-Here are the steps to create and join your own instance of Heart Strike:
-1. Downloading the files:
-    1. A version of Paper for Minecraft 1.20.4 and rename the file to "Paper.jar".
-    2. The following plugins from the internet, __it does not need to be the exact version__ and the format goes as following, PLUGIN (`VERSION USED DURING DEVELOPMENT`):
-        - Freedom Chat (`1.5.2`)
-        - Via Version (`4.9.2`)
-        - Via Backwards (`4.9.1`)
-        - Fast Async World Edit (`2.8.5-SNAPSHOT-646`)
-        - World Guard (`7.0.9`)
-        - Skript (`2.8.2`)
-        - SkBee (`3.3.0`)
-        - DiSky (`4.12.2-beta1`)
-        - Skript Particle (`1.2.0`)
-        - Diskuise (`0.3.4`)
-        - ProtocolLib (`5.1.0`)
-        - Libs Disguises (`10.0.41-Free`)
-        - Citizens (`2.0.33-b3305`)
-        - Mythic Mobs (`5.5.1`)
-        - Mythic Skript Addon (`0.99.4`)
+Here are the steps to create and join your own instance of Heart Strike. Remember to keep calm during each process:
+1. Downloading the following files:
+    1. A version of [Paper for Minecraft 1.20.4](https://papermc.io/downloads/paper). Ensure the file name is set to "Paper.jar"!
+    2. The following plugins from the internet, __it does not need to be the exact version__ and the format goes as following, "PLUGIN, (`VERSION USED DURING DEVELOPMENT`)":
+        - [Freedom Chat](https://modrinth.com/plugin/freedomchat) (`1.5.2`)
+        - [Via Version](https://github.com/ViaVersion/ViaVersion/releases) (`4.9.3`)
+        - [Fast Async World Edit](https://ci.athion.net/job/FastAsyncWorldEdit/) (`2.9.1-SNAPSHOT-674`)
+        - [World Guard](https://dev.bukkit.org/projects/worldguard) (`7.0.9`)
+        - [Skript](https://github.com/SkriptLang/Skript/releases) (`2.8.3`)
+        - [SkBee](https://github.com/ShaneBeee/SkBee/releases/) (`3.4.1`)
+        - [DiSky](https://modrinth.com/plugin/disky/version/3utXU8e8) (`4.12.2-beta1`)
+        - [Skript Particle](https://github.com/sovdeeth/skript-particle/releases) (`1.2.0`)
+        - [Diskuise](https://github.com/UnderscoreTud/diskuise/releases) (`0.3.4`)
+        - [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/) (`5.1.0`)
+        - [Libs Disguises](https://github.com/libraryaddict/LibsDisguises/releases) (`10.0.42-Free`)
+        - [Citizens](https://ci.citizensnpcs.co/job/Citizens2/) (`2.0.33-b3365`)
+        - [Mythic Mobs](https://mythiccraft.io/index.php?resources/mythicmobs.1/) (`5.6.1`)
+        - [Mythic Skript Addon](https://github.com/BerndiVader/MythicSkriptAddon/releases) (`0.99.6`)
     3. Next, here on GitHub at the top of the page click `Code` > `Download ZIP`
-    4. Download the world file from Mega __https://mega.nz/file/wjcWUBZQ#HOGV5RQ72fgFK7v4rxCvpaYn8HkmYBr1n93piov-Pco__
-2. Setting up a Minecraft server:
+    4. Download the world file, __https://mega.nz/file/wjcWUBZQ#HOGV5RQ72fgFK7v4rxCvpaYn8HkmYBr1n93piov-Pco__
+        (I'm not sure if I should host the file here on GitHub...)
+2. Setting up a 1.20.4 Paper server:
     1. Create a new folder at location of your choice, for example `/home/USER/Heart Strike/`.
     2. Move all of the downloaded files into the folder you created.
     3. Open the Terminal/Powershell application and execute the commands in order:
@@ -50,9 +59,15 @@ Here are the steps on updating the server if you already have one up and running
 2. At the top of this page click `Code` > `Download ZIP`
     - Unzip the ZIP file in `*/plugins/` and replace the old files.
 
-## Special Thanks To...
-- Raspi_Dude, for providing a host to one of the instances (24/02/2024-Present). 
+# Special Thanks To...
+Raspi_Dude, for providing a host to one of the instances (24/02/2024-Present). 
 
-- FOSS developers across the board and around the world. I'm so glad you all exist.
+![Image](/YouMayNotNeedThis/Raspi%20Dude.webp)
 
-- Grass, I touched it one time and it was nice.
+FOSS developers across the board and around the world. I'm so glad you all exist.
+
+![Image](/YouMayNotNeedThis/LineageOSmyBeloved.png)
+
+Grass, I touched it one time and it was nice.
+
+![Image](/YouMayNotNeedThis/Grass.jpeg)

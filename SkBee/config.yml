@@ -14,6 +14,7 @@ settings:
   # Example, when using the minecraft recipe command `/minecraft:recipe give playerName skbee:my_custom_recipe`
   # Example, when using the namespaced key expression `namespaced key from "some_cool_namespace"` (`skbee:some_cool_namespace`)
   namespace: skbee
+  scoreboard-reverse-lines: true
 
 # Disable elements you do not plan to use.
 elements:

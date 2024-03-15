@@ -1,25 +1,27 @@
-function missileATK(a: entity, r: number, d: number):
-	set {_l} to location 0.5 blocks below {_a}'s head
-	play sound "entity.iron_golem.damage" at {_a} for {_a}
-	loop {_r} times:
+function missileATK(attacker: entity, range: number, damage: number):
+	set {_location} to location 0.5 blocks below {_attacker}'s head
+	play sound "entity.iron_golem.damage" at {_attacker} for {_attacker}
+	loop {_range} times:
 		loop 4 times:
-			draw 1 of dust using dustOption(white, 1) at {_l} with extra 0 to all players
-			loop all entities in radius 1 of location 0.5 block below {_l}:
-				if damageCheck({_a}, loop-entity) is true:
+			draw 1 of dust using dustOption(white, 1) at {_location} with extra 0 to all players
+			draw 2 of electric spark at {_location} with extra 0.3 to all players
+			loop all entities in radius 1 of location 0.5 block below {_location}:
+				if damageCheck({_attacker}, loop-entity) is true:
 					set {_s} to true
-					set {_l} to location 0.8 block in front of {_l}
+					set {_location} to location 0.8 block in front of {_location}
 					exit 4 sections
 			add 0.25 to {_dis}
-			set {_l} to location 0.25 + {_dis} block in front of {_a}'s head
+			set {_location} to location 0.25 + {_dis} block in front of {_attacker}'s head
 		wait 1 ticks
-		draw 1 of dust using dustOption(black, 1.5) at {_l} with extra 0 to all players
+		draw 1 of dust using dustOption(black, 1.5) at {_location} with extra 0 to all players
+		play sound "block.fire.extinguish" with volume 0.2 with pitch 2 at {_location}
 	
 	if {_s} is true:
-		draw 1 of explosion at {_l} with extra 0.8 to all players
-		draw 1 of dust using dustOption(red, 5) at {_l} with extra 0 to all players
-		play sound "entity.iron_golem.repair" with pitch 1.2 at {_a} for {_a}
-		loop all entities in radius 2.5 of location 1 block below {_l}:
-			if damageCheck({_a}, loop-entity) is true:
-				damage loop-entity by getDamage({_a}, loop-entity, {_d})
+		draw 1 of explosion at {_location} with extra 0.8 to all players
+		draw 1 of dust using dustOption(red, 5) at {_location} with extra 0 to all players
+		play sound "entity.iron_golem.repair" with pitch 1.2 at {_attacker} for {_attacker}
+		loop all entities in radius 2.5 of location 1 block below {_location}:
+			if damageCheck({_attacker}, loop-entity) is true:
+				damage loop-entity by getDamage({_attacker}, loop-entity, {_damage})
 				loop 8 times:
 					draw 1 of electric spark at loop-entity's head with extra 0.8 to all players

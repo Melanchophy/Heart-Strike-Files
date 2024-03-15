@@ -7,3 +7,4 @@ on load:
 
 	set {i::npc::%{_npc}%::dialogue::2::1} to "Here's commands you are able to use in this version:"
 	set {i::npc::%{_npc}%::dialogue::2::2} to "/debugmode, /debugstats, /reset <INDEX>"
+	set {i::npc::%{_npc}%::dialogue::2::alt} to "Cool, no?"

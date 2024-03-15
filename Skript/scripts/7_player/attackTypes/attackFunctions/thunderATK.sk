@@ -1,28 +1,28 @@
-function thunderATK(a: entity, r: number, d: number):
-	set {_l} to location {_r} blocks in front of {_a}
-	set {_l} to location 6 blocks above {_l}
-	play sound "item.crossbow.loading_end" with volume 1.5 at {_L} for {_a}
-	draw 3 of dust using dustOption(gray, 4) at {_l} with extra 0.8 to all players
+function thunderATK(attacker: entity, range: number, damage: number):
+	set {_location} to location {_range} blocks in front of {_attacker}
+	set {_location} to location 6 blocks above {_location}
+	play sound "item.crossbow.loading_end" with volume 1.5 at {_location} for {_attacker}
+	draw 3 of dust using dustOption(gray, 4) at {_location} with extra 0.8 to all players
 	wait 8 ticks
 	loop 11 times:
 		chance of 50%:
-			draw 1 of dust using dustOption(white, 1) at {_l} with extra 0.8 to all players
+			draw 1 of dust using dustOption(white, 1) at {_location} with extra 0.8 to all players
 		else:
-			draw 1 of dust using dustOption(yellow, 1) at {_l} with extra 0.8 to all players
-		set {_L} to location 0.5 blocks below {_l}
+			draw 1 of dust using dustOption(yellow, 1) at {_location} with extra 0.8 to all players
+		set {_location} to location 0.5 blocks below {_location}
 	
-	play sound "entity.generic.explode" at {_L}
-	play sound "entity.generic.extinguish_fire" at {_L}
+	play sound "entity.generic.explode" at {_location}
+	play sound "entity.generic.extinguish_fire" at {_location}
 	
 	loop 24 times:
 		set {_v} to spherical vector radius 2.5, yaw (loop-value * 15), pitch 0
-		draw 1 wax off at {_l} ~ {_v} with extra 0.0 to all players
-	draw 1 of explosion at {_l} with extra 0.8 to all players
+		draw 1 wax off at {_location} ~ {_v} with extra 0.0 to all players
+	draw 1 of explosion at {_location} with extra 0.8 to all players
 	
 	loop 3 times:
-		loop all entities in radius 3 of location 1 block below {_l}:
-			if damageCheck({_a}, loop-entity) is true:
-				damage loop-entity by getDamage({_a}, loop-entity, {_d})
+		loop all entities in radius 3 of location 1 block below {_location}:
+			if damageCheck({_attacker}, loop-entity) is true:
+				damage loop-entity by getDamage({_attacker}, loop-entity, {_damage})
 				loop 8 times:
 					draw 1 of electric spark at loop-entity's head with extra 0.8 to all players
 		wait 3 ticks

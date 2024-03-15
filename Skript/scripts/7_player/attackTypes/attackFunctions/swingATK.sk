@@ -1,17 +1,17 @@
-function swingATK(a: entity, r: number, d: number) :: boolean:
-	set {_l} to location {_r} blocks in front of {_a}'s head
-	play sound "entity.generic.explode" with pitch 1.8 at {_a} for {_a}
+function swingATK(attacker: entity, range: number, damage: number) :: boolean:
+	set {_location} to location {_range} blocks in front of {_attacker}'s head
+	play sound "entity.generic.explode" with pitch 1.8 at {_attacker} for {_attacker}
 	loop 24 times:
 		set {_v} to spherical vector radius 2, yaw (loop-value * 15), pitch 0
 		chance of 50%:
-			draw 1 electric spark at {_l} ~ {_v} with extra 0.0 to all players
+			draw 1 electric spark at {_location} ~ {_v} with extra 0.0 to all players
 		else:
-			draw 1 wax off at {_l} ~ {_v} with extra 0.0 to all players
-	draw 1 explosion at {_l} with extra 0.5 to all players
+			draw 1 wax off at {_location} ~ {_v} with extra 0.0 to all players
+	draw 1 explosion at {_location} with extra 0.5 to all players
 	
-	loop all entities in radius 3 of location 1 block below {_l}:
-		if damageCheck({_a}, loop-entity) is true:
-			damage loop-entity by getDamage({_a}, loop-entity, {_d})
+	loop all entities in radius 3 of location 1 block below {_location}:
+		if damageCheck({_attacker}, loop-entity) is true:
+			damage loop-entity by getDamage({_attacker}, loop-entity, {_damage})
 			loop 10 times:
 				draw 1 of electric spark at loop-entity's head with extra 1 to all players
 		

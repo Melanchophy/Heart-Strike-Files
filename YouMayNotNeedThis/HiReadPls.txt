@@ -1,0 +1,3 @@
+This only contains assets and stuff for the README.md for the github page.
+
+Unless you've forked this server or something, you'll probably want to remove this folder to save on storage!

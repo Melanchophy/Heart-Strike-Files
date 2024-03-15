@@ -12,6 +12,14 @@ on right click on entity:
 				NPCtalkbrain(player, {_n}, false)
 			else if {i::NPC::%{_n}%::dialogue::1::1} is set:
 				NPCtalkbrain(player, {_n}, true)
+				if {p::false::%player's uuid%::conversationLeaving} is not set:
+					set {p::false::%player's uuid%::conversationLeaving} to false
+					while {p::false::%player's uuid%::conversationLeaving} is false:
+						wait 2 ticks
+						if distance between player and event-entity is greater than 4:
+							clear {p::false::%player's uuid%::npc::%{_n}%::dialogue}
+							clear {p::false::%player's uuid%::conversationLeaving}
+							send "&8&oYou quietly leave the conversation..." to player	
 			else:
 				npcTalk(player, "%nl%&a%{_n}%&f &8»&f ...%nl%", "entity.villager.trade", {_null})
 
@@ -63,6 +71,8 @@ function NPCtalkbrain(p: player, npc: text, progressed: boolean):
 				if {p::false::%{_p}'s uuid%::npcCanProgress::%{_npc}%} is not false:
 					add 1 to {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
 					set {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue} to 1
+				else:
+					set {_line} to "alt"
 			else:
 				add 1 to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
 
@@ -74,11 +84,11 @@ function NPCtalkbrain(p: player, npc: text, progressed: boolean):
 
 
 			set {_block} to {p::true::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
-			set {_line} to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
+			if {_line} is not "alt":
+				set {_line} to {p::false::%{_p}'s uuid%::npc::%{_npc}%::dialogue}
 
 			set {_text} to "%{i::npc::%{_npc}%::dialogue::%{_block}%::%{_line}%}%"
-		
-		
+
 
 
 		# Resulting text
@@ -95,15 +105,6 @@ function NPCtalkbrain(p: player, npc: text, progressed: boolean):
 
 		clear {p::false::%{_p}'s uuid%::conversation}
 
-
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
 
 function npcTalk(p: player, t: text, s: text, prevSound: text):
 	send "%{_t}%" to {_p}

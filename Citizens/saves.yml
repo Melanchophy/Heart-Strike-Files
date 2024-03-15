@@ -1,6 +1,6 @@
 # Citizens NPC Storage
 
-last-created-npc-id: 25
+last-created-npc-id: 27
 npc:
   '10':
     metadata:
@@ -46,7 +46,7 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -59,13 +59,13 @@ npc:
     uuid: 218984bb-149d-4cf7-b2f6-59629eeda703
     traits:
       location:
-        bodyYaw: 40.69461
+        bodyYaw: 81.978516
         world: heart_strike
         x: '9.0'
         y: '42.1875'
         z: '-13.5'
-        yaw: '40.6946'
-        pitch: '7.5545'
+        yaw: '81.9785'
+        pitch: '-16.2532'
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
       spawned: true
@@ -93,7 +93,7 @@ npc:
           '0': 0.0
           '1': 360.0
       type: PLAYER
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -137,7 +137,7 @@ npc:
         signature: NVt+HQjF27FEhSrO6jQrhhBEwMCbPk0tT10oBhWsKusrmI5AfNfLY/pm28dIgjedHky+dAkgXcxUH1sDNaPnI+JEndcAxB7w2MwbYkhENW5eyUQm6ezuDhs3AxPHVDr/Gn9OuokAJDWLq1xYgL/+v2hYsXX4WvzcGCfFXBNx5sp8GWmKqupkFNnLjXDDoSMO8uQCknl4fuXjRxid0OMaAT2NMhJicJqSnp63DkniS7jt7Z70TUthIVTW5hjPjtwUN+0eC6PAxt2lRh9qlJybwdSeNu0ULGUrRel79PpssgkhLqw9GN5oUOBFtNKUB4zEIcmTSeEPUP0omqizirfQgZ/fTD5vNI4kTuCx3VuLE7UY3i50Hki5f41WE/f8kGwIfef2w4Uj2VrJa9Y9g5dzqGD494RsFDY1YXV4/sfWChNOk495PAKpOcErVoZsKbEysGTiJNDvpQ8+cpt/peSaCUZJh+4M/pqK/U0I1Mhc4R/6MGakijwEeQn7AMRWTZ6HfTLlaQ6BoHS4Q2NTLoWbNjnQan8GLEgw4QkZyXmlS6McPZFYF3kjTUammNBHJYEmw0ytMQX1SYXQtBPo/Kp0Hx55WnQ+kSwFXWv/azUijqguU3idGB+5PyeHWfkUfiy5R3ZrtNN7b31O5d/6OhxMoEkaHc89WGVHOdhda5LEy1Q=
         textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTcwODUzMTA0OTkzOCwKICAicHJvZmlsZUlkIiA6ICJhNmE0ZGIwZWFhMjc0NWJmYTJiNzFmOWU4NTdmYzRmMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJEb3J1biIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS80NzU2OGQ4ZjJkYmRjMTg3NzVkYmZlMTcxYWJmNGYxMjJmNjEzNzFmZmMyMDlkMjJhNWVhYzcwYmM2OTY0Y2Q4IgogICAgfQogIH0KfQ==
       spawned: true
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -181,14 +181,14 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: 130.76143
+        bodyYaw: -2.4492264
         world: heart_strike
         x: '1.9204'
         y: '43.0'
         z: '3.1096'
-        yaw: '150.7614'
-        pitch: '-0.3295'
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+        yaw: '-2.4492'
+        pitch: '9.6271'
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -229,14 +229,14 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: -164.76147
+        bodyYaw: 70.82201
         world: heart_strike
         x: '1043.5'
         y: '24.0'
         z: '-22.5'
-        yaw: '-164.7615'
-        pitch: '-4.0112'
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+        yaw: '70.822'
+        pitch: '-4.8632'
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -277,14 +277,14 @@ npc:
           '0': 0.0
           '1': 360.0
       location:
-        bodyYaw: -142.95511
+        bodyYaw: 81.20485
         world: heart_strike
         x: '1007.5'
         y: '34.0'
         z: '1.5'
-        yaw: '-142.9551'
-        pitch: '23.4846'
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+        yaw: '81.2048'
+        pitch: '-20.5594'
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -294,12 +294,12 @@ npc:
     uuid: ebd4224f-91e4-4f8a-ac45-93c5aa95d504
     traits:
       location:
-        bodyYaw: -64.63244
+        bodyYaw: 6.717514
         world: heart_strike
         x: '-14.3209'
         y: '46.0625'
         z: '-1.7'
-        yaw: '-64.6324'
+        yaw: '6.7175'
         pitch: '0.0'
       type: SHEEP
       spawned: true
@@ -323,7 +323,7 @@ npc:
           '1': 360.0
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
-    traitnames: rotationtrait,lookclose,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: rotationtrait,location,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -336,13 +336,13 @@ npc:
     uuid: a693ca68-6582-4aec-9b03-4cc8b3f3948a
     traits:
       location:
-        bodyYaw: 82.01074
+        bodyYaw: 78.74106
         world: heart_strike
         x: '21.3323'
         y: '40.0'
         z: '-0.4364'
-        yaw: '82.0107'
-        pitch: '-12.3583'
+        yaw: '78.7411'
+        pitch: '-15.5545'
       skintrait:
         fetchDefaultSkin: true
         signature: bWktSoJfLl6X2QUpyA9IVjNHOhJZnVFeaBCPM1E2hanSWXCK6Qoev9Q/sWGjgyEbRFNeo0gqg5kG64IUVR3oOxtFruo5OQ8tobVFGD1LHteS8OZPMdRWzemVr6b+0Opp2ttnq5gojEaKmVWJzUB86mDK1w99bOWXpb6MifOjqoNicC9WFi2ODeo3jCRu9EDwvSvT4ZfcqOtiBdSmMkoNp4+1Ip0IwJcvLREL2dHVrm/P1wL4qdc0yhZe3MSGwJ8GcmTHr4L2DzqDlNjZ+owIVSRjj3hLKHdcX3XAcMcmZwtrkDHNxltblsqOhgQRKV8HAn1jYQ0YXTZ8BAryXIRKe7K2E0Gm4fmUVorHwqhFEhOXqCeD9EUoGEqwBuQ830jqccU9Bx5Ws4JzKNfCKXtMq2e6qJQ/KSEH6XDJsIpxlH5Xrjmz+lfJWHzJU6OAQxk833iV25GpPia4ixmLbZ6zMesZBAlE8wbG2Rr01ikOFY6JY8+bwwEh/Y+k6PTSX/E5Zhlcauc3mb1iWoo8lVHi+xXrD7XHEFrlt0L16fKOMIxRC5UMB5zHfBs8clcb/qmAJlZW8wwDhTSSFNpdHmmzsyVEtUaj7yGLol5ZToGCJ0I5l0p6t74GwynvMSMnlsdPhipE7gZfOYE2R+dQJOmBZDbtZcjLhk+tY9mp2C7kKJ8=
@@ -370,7 +370,7 @@ npc:
       spawned: true
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -383,13 +383,13 @@ npc:
     uuid: abfb4ff2-c9e9-4ca2-98a4-37e8761101c5
     traits:
       location:
-        bodyYaw: -178.9636
+        bodyYaw: -78.44894
         world: heart_strike
         x: '-1.5281'
         y: '41.0'
         z: '15.3748'
-        yaw: '-178.9636'
-        pitch: '-13.6364'
+        yaw: '-78.4489'
+        pitch: '0.0'
       skintrait:
         fetchDefaultSkin: true
         signature: ftDPT/X73XCUHRAY2iMqtFHNDwCcDUJfb6/5U6YCI8Eyd8+wyxzd5KhUC+NRSP6FxxqHBz6yhSFC1G5sAjJZivigpDrA1pbWBGjywxRrgBBR14NueTjfcctoQOlodXPEK9sI6Wzphe32AkkuXRCI0SY4xMOZCFIlU8Ej0x5JZZEI7f9iSatf39snNxPHs9inxPAUTBCTVioRjGE9Wyf6PY51HSKO1Dhy4IK9ujo+gjGjFr5J54/1ES7r+C+lMST8Jax4aiz3o4lvcPhqcuqkAqaFNricFVTwKQnSfd6cM04mqGsxhjrc+qpZbFSz9p/REEazebTCMPPGwxc84GVEa6a+SHy78TGbHxKSh2l/d4mUSCKSat64HVPGBKvcY3VGYYrp9cF84csw8+tS8mWABtTRAku+7qFCQauTFKnZ7o7n5IbLf3XT83MJmVBjcrGr92cFHOkgt1OOmd6RZrRSR4UopNc3FwFEvAKYsy1i5FGrtJTiAnRibAjJWRRU/cOfvGl1uwmDQ9YGz9scQWIiHgDpHHXGSNwaDLkqSHvgkjJ88ED6ZLLy8FCUuueS90OOvaLJBD4gGPNYEcwPcmDEgOWJaK9/g3dJABVgJ1AiZaEIQRj/Lewwrhzhkl4d4mHAe3NS70tYb4ZuqtdD6XH6XRfhURdLMdOpGVG7TKS4wFk=
@@ -417,7 +417,7 @@ npc:
       spawned: true
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -430,13 +430,13 @@ npc:
     uuid: 28677aea-08c4-49e8-9c23-6090b0fb1f84
     traits:
       location:
-        bodyYaw: 109.15459
+        bodyYaw: -8.373444
         world: heart_strike
         x: '-4.4846'
         y: '44.0'
         z: '-19.4514'
-        yaw: '129.1546'
-        pitch: '-4.3493'
+        yaw: '-8.3734'
+        pitch: '-8.4242'
       skintrait:
         fetchDefaultSkin: true
         signature: B9PCU28h0lJ11BVt1utB+Yj1WyFpDeWISg1+sUsO8Q14JF1GjUHZ//NCn5ws/vvqCCcbS94HuNu+vuEDAT3hJ0DMhedVumhvd+48MuOpoPAHDd8inozE/vVCuJmV+7jsGFiC2tcUiQsNnD6wyv+C8WsyrSy4Hk89yL8OdY49yfak8MpRsw1gHbz0FQy3K0Qznr5lRHfoHlBUPcqHzJffzmnIxbgWdOu3Y+sWtP5he9+zLgKTeJugWwWNGUvTLwZENSllAO1APL8Ol9LNm4Yr+IUqoKHYlhjsUuBHLXT7NutAYlbFShTbRVMmwaUcbd7JHNSLul5wVTwGgbp7IW+FQUaageF5gxlrUyDkgY3GnqB55ZvvurkpLwRgsdn7zPp/nfRAzoMpnYFMn2wPYlHfq1slDjfAFO14yozPfTbVvomMkLA0k8a0Tm6F/Kw2mwKPLQ1zNwG2yvKvSQtLDJ0Dk9ErD7j6yO0faM7CnKsk2DwSn/LcUJ1NYxsPN/2ySGYQgFQyvKI5gtAPfO0x5LHPPBl8hjgqi418Jlnk/Wr171vIrcwJPY4ib1oeMoqVWEeXGAb3f+yGxTLHei6U0ZaU2pYMdvEsEjbzk1oY27OUujWuZx0hhZaRXcLxOnAAAT3wZp/LdmRvUwQmCjMhQr7NuiJ9byuyxrfNMpOpw5FRj0U=
@@ -464,7 +464,7 @@ npc:
         randomYawRange:
           '0': 0.0
           '1': 360.0
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -477,13 +477,13 @@ npc:
     uuid: 830f2891-68a4-4285-b881-8fad79c0e722
     traits:
       location:
-        bodyYaw: 110.66621
+        bodyYaw: 153.86131
         world: heart_strike
         x: '19.324'
         y: '42.0'
         z: '18.3005'
-        yaw: '90.6662'
-        pitch: '-17.3498'
+        yaw: '173.8613'
+        pitch: '-36.7987'
       skintrait:
         fetchDefaultSkin: true
         signature: qn8MPn+6C46KtBQuA+3WytGtojlzJpdXsoN0SYmb26BPnO4U49tue/aZvx5v5aPp6O9dQi224K4CUiwCVkmp0sggCbQnL1I76SrNRAF7bdxq/XZEa4X2SGhodJFWzoMVdm3jdu2phwWShc5HiyQt6KTr7l6ljvAK9rIXzgOstTwPsDL7cMhSL8LtFd2bHOas6BQ83awhDGs+BGLdMuRNgug96CT7ZM1s2zqkTdM6RoAIkX+mX9LznAJUZC7MoEfse6tB81j48w2M5/BLO8el9njD6uiKaX0stU00WHcktVYrbH8PFGSmbYEHDkT9DzsJbBRhvss7/HN//67PlF3SvjCYbOqmARpEfC4EnQ4hCnx0DcqZWFExHtGhY1K+PnMFs3V1xvODz75jtpXWiKgZ/3XCrC/fWl1H8s8DE+5e4KEpMxLMmvcfH1vWMKtbzc2J6rqaKVkSee+R43wfmjnKfnsoKXEnMJlMfil74b2Cdx+5mhsHgzlb0yoiyha5IePd5CM8XpgaJQqC1DK5LnlUhay+qZJET19/5ysMZlQ34SF4vhZhLsTi86lHimfjAQpEPc7Y6k5xXLgTX/dYVPGz4+FSlFcbK4p9POCWNB0iB3qlbBMN1sM6sJWYaky+8oCvq6nEYf/XkoltE7GkIaUEt8SN70y5QM5/gkLlBFvJ0EU=
@@ -511,7 +511,7 @@ npc:
       spawned: true
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false
@@ -524,13 +524,13 @@ npc:
     uuid: ac4f510e-325a-49dd-80bc-0065a1f39f6a
     traits:
       location:
-        bodyYaw: -41.762638
+        bodyYaw: -53.351418
         world: heart_strike
         x: '-27.5'
         y: '42.0'
         z: '13.5'
-        yaw: '-41.7626'
-        pitch: '2.27'
+        yaw: '-53.3514'
+        pitch: '5.0235'
       skintrait:
         fetchDefaultSkin: true
         signature: V8bi6NVTqEgB47wlLjbHQJYtKMAWjXdKxeOeLDmL62l+ALJCh8yaw9ZtBsfLQNgOFZ+ofhCc1NABtRTNDKTsS9yqOf/f0Vr0XwXAyI3g3Uq8XvaoTufhwo6MarzdHavRQG8yX1b3pv1oPKyYAE/zY+EXyfxiZ+7tHYcu3BdooEjAnN+ypQVTGIQbykqmQa8SXwa2bL54nI18Qg38r+GLYVQ8ANt5EcKq53nz475Q/xmKyO+XSR5K5HYcHfm6EdVIBRTr9h9ODqB58JXX5Oge76GaNMLGuWOlVD26VHQftMwXdS45BsM9pndJSNMvfGrL9ypTAlRWm1FibAiLRq91FSviaikFMjITQsu5bETlXIPyPY+xOVOTfA7bXqG3cX8twNdLqW12u0Iwp7BwLeP0jR0mTDcHl6wbNjqdb003oU3P1qC9NaMVJxeagBaftJlPWlPJxXXm/uXeUnpinjZ0yXbCma5vVb+6oJK9w7xO4gUsQysWJtX6AJZzB3tIZlxAZ2LHbM40vx0vlLVrznYDJsCjD0nrbK/HS1Iq31qOElYaBjpHNKaYh3EkYi1keGCScB6s/SJ96A/gW5x+oHJE/nqK7o1JyynOlZfcqt2RZoqS/iLy1GKZCCQrwkR21IRFIVb9PdeDLWDlz2sfrGsSP2cx7tPhTnrLAgq93TGW/p8=
@@ -558,7 +558,101 @@ npc:
       spawned: true
       owner:
         uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
-    traitnames: rotationtrait,lookclose,skintrait,inventory,location,spawned,type,mounttrait,scoreboardtrait,owner
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '27':
+    metadata:
+      cached-skin-uuid: 9b37aca3-a89b-4038-9d02-07830ce1663e
+      cached-skin-uuid-name: bella
+    name: '&aBella'
+    uuid: eb161e3e-c00d-404f-933b-21a9ab5584e3
+    traits:
+      owner:
+        uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
+      lookclose:
+        range: '10.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      location:
+        bodyYaw: -103.74472
+        world: heart_strike
+        x: '-49.5977'
+        y: '55.0'
+        z: '26.7123'
+        yaw: '-103.7447'
+        pitch: '-21.3699'
+      skintrait:
+        fetchDefaultSkin: true
+        signature: CgyRXDQr24eR31ZizPwy6xFdGfBTjJFt3iT4VE5KMC+kmV6dJRpW9zmFZ13G74BA+iTNKuYRAKVfLbfGUkqYICDy7nibWxQ16b5KRcodWdQwt6595IvqufQobfuG2oVQhNFVcYduai9voNc6rC9ZwumTKLYqryfIOEStol5Abo3aOI/phd10ZPnT5jEuFSFZLEdtCKzaXJkRiZvQhyRXo6VKPisiJ67kJvkG6/RsaiH8rOxWb4yVRU0leSH7yZMBtKY8nsGX8iRtULrhDGVTiYNS6e3N8toAXr8qOPs6CFmBNTY8a9zq+rE9AWvUUrxFxsQD4Ae2AuZKf8d22GcOLF58bthLs+1HxHxhFmcIG7Plwd8yZpaOoTlMlUf77dVmeP1ovsuFgyLsnwJGygMWLYAD94OskF2Qd0uaaBloGJYaWquxXNkQ8w13jrZIIj1K4MvgcUXtI/+nOrzSucCNd75U6K8Xy+IuA9HkEpopMSqUi1IsEYr8eoUh42KXaadu3CUQbVfXfuX4T5gFg/tSlQn4ZLzuTFlchbxHlZ69u0CF03hmL8l62XjAmw/tAiD1R88dkUPJvjP+vC3W+rMdlwHG4XDKiJspYtAKPoUVB/Y2qYS/N1R1VdDpThtnXkK1i4C1TqIFkq8wt5d+P2dM59WQotpgIw5FWkd3qj3TxMc=
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTcxMDMzOTUyNDkyMCwKICAicHJvZmlsZUlkIiA6ICI5YjM3YWNhM2E4OWI0MDM4OWQwMjA3ODMwY2UxNjYzZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJCZWxsYSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hOWZjZGRjMzVhZThlMzc3NWJmN2M4MWZkNDFhNTQ1ZTE0OWQ1Mzg5MzIzMGRiNzg0MTU2YTRmYjU5NDUzZTc2IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0MGMwZTAzZGQyNGExMWIxNWE4YjMzYzJhN2U5ZTMyYWJiMjA1MWIyNDgxZDBiYTdkZWZkNjM1Y2E3YTkzMyIKICAgIH0KICB9Cn0=
+        updateSkins: false
+      type: PLAYER
+      spawned: true
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: false
+  '26':
+    metadata:
+      cached-skin-uuid: 01dd1cd5-5ebc-411b-b5bc-0e331ffc2b2b
+      cached-skin-uuid-name: emma
+    name: '&aEmma'
+    uuid: 81ab7233-b3c4-4128-9789-fa8ff865e58f
+    traits:
+      owner:
+        uuid: d52984a0-971b-4ec6-9e30-a0d7ae35822b
+      lookclose:
+        range: '10.0'
+        disablewhilenavigating: true
+        enabled: true
+        enableRandomLook: false
+        headonly: false
+        linkedbody: false
+        perplayer: false
+        randomLookDelay: 60
+        randomSwitchTargets: false
+        realisticlooking: false
+        targetnpcs: false
+        randomPitchRange:
+          '0': 0.0
+          '1': 0.0
+        randomYawRange:
+          '0': 0.0
+          '1': 360.0
+      location:
+        bodyYaw: -30.827503
+        world: heart_strike
+        x: '25.7616'
+        y: '28.0'
+        z: '-47.8069'
+        yaw: '-30.8275'
+        pitch: '-5.7365'
+      skintrait:
+        fetchDefaultSkin: true
+        signature: OUwf0Qtb8gVkEp0T34oU0Z0qe+YRfu1NXhQVCkyUT+nAelRVHPgetOvLBcmzYUjvryHSNvhpaFa8mpxZXiRrUTntM03OVoujjxwdIHhAAbh7dp5yEPRrW5TXevSTigorviwTinAjDYiBqpTRRv4dtruo/K+r+OWmh/CAMmwJoeJ+a0+J6jqitq2SmO19pDWE6fIdEg7fPcxRV3TshSqjf1vAHhCiLWgIIf/y0VxXUYe7U4fTKmnB6TCz/A/Y+0D0Df5LjAJw8ZkXdozeRjVtyTd/gSpqTuMeTjzQXkUVgIXGfeyYnQyDvHttGGSvzQN+Qg/f6BE+W960a+bpliMkWo52m0fG+OMHmOPW23NUjFJjizyu7iAoMd7CxCmzhKhsQjF3ZkRikD7JUKKkliub8zGd7vkot2EMdsBuX/DAg1tQPNllGvDjsJzUPhTNyZxd2Z40HHi8oouANobIY/W5R7pkBOSkTa9tCxlx0TLjloDBNCb0Bz5Ku/uqrb9Si2PB2YdWvjr2b5kipVbou1Zf2OyO5j9Ekg8DOfs6dvFMNPe+3/dZU77ufrbF1lYmt+Rj8nO1+GnBtc/eea6LQaKTew8wWFVOh1YZOBmY26g8COYWKTgeNJkwxHMf1IeA2a+1OVGSa4j7XaVU5YBMjV1piZ/1WThrxd1nh4x3SC2nmP0=
+        textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTcxMDMzOTUwOTkxMCwKICAicHJvZmlsZUlkIiA6ICIwMWRkMWNkNTVlYmM0MTFiYjViYzBlMzMxZmZjMmIyYiIsCiAgInByb2ZpbGVOYW1lIiA6ICJFbW1hIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2FmMWMwZDc1MGFlMzY4Y2Q5MzBmYzY2OGJmZDE1YzIyYzBmYWRiYzJlZjNmOWEzMDg1ODg0YmQ1NDBiZTkyNSIKICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0MGMwZTAzZGQyNGExMWIxNWE4YjMzYzJhN2U5ZTMyYWJiMjA1MWIyNDgxZDBiYTdkZWZkNjM1Y2E3YTkzMyIKICAgIH0KICB9Cn0=
+        updateSkins: false
+      type: PLAYER
+      spawned: true
+    traitnames: skintrait,rotationtrait,location,inventory,spawned,lookclose,type,owner,mounttrait,scoreboardtrait
     navigator:
       speedmodifier: '1.0'
       avoidwater: false

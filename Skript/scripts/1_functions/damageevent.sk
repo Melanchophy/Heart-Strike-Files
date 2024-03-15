@@ -8,7 +8,7 @@ on damage of entity:
 				cancel event
 				exit
 		else:
-			if cooldown("%attacker's uuid%", "melee", 1 second, false) is false:
+			if cooldown(attacker's uuid, "melee", 1 second, false) is false:
 				set damage to getDamage(attacker, victim, 1)
 				exit
 			else:

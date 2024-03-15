@@ -72,13 +72,6 @@ on chat:
 	wait 1 tick
 	post "%uncolored player's name% » %uncolored message%" to text channel with id "1199214941798932590"
 
-on death of player:
-	wait 1 tick
-	make embed:
-		set title of embed to ":skull: %uncolored death message%"
-		set embed color of embed to red
-	post last embed to text channel with id "1199214941798932590"
-
 on join:
 	wait 1 tick
 	make embed:
@@ -117,23 +110,44 @@ function randomTransmissionBroadcast():
 		set time stamp of embed to now
 	post last embed to text channel with id "1199214941798932590"
 
+on damage:
+	if victim's health - damage > 0:
+		clear {p::false::%victim's uuid%::death message}
 
+on death of player:
+
+	teleport victim to {i::locations::lumen}
+	if {p::false::%victim's uuid%::death message} exists:
+		set death message to "&c&l∴&c %{p::false::%victim's uuid%::death message}%"
+		if {p::true::%victim's uuid%::heroName} exists:
+			replace all "<victim>" with "&o%{p::true::%victim's uuid%::heroName}%&c" in death message
+		else:
+			replace all "<victim>" with "&o%victim's name%&c" in death message
+		clear {p::false::%victim's uuid%::death message}
+	
+	set {_discordDeathMessage} to death message
+	replace all "∴" with ":small_red_triangle:" in {_discordDeathMessage}
+	make embed:
+		set title of embed to uncolored {_discordDeathMessage}
+		set embed color of embed to red
+	post last embed to text channel with id "1199214941798932590"
+
+on respawn:
+	teleport player to {i::locations::lumen}
 
 # Server start/stop messages
 
 on skript start:
-	wait 1 tick
 	make embed:
-		set title of embed to ":green_heart: Server Has Started"
+		set title of embed to ":green_heart: Server Has Started!"
 		set embed color of embed to green
 		set time stamp of embed to now
 	post last embed to text channel with id "1199214941798932590"
 
 
-on server stop:
-	wait 1 tick
+on skript stop:
 	make embed:
-		set title of embed to ":red_circle: Server Has Stopped"
+		set title of embed to ":red_circle: Server Is Stopping..."
 		set embed color of embed to red
 		set time stamp of embed to now
 	post last embed to text channel with id "1199214941798932590"

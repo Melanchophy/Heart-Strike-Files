@@ -14,7 +14,7 @@ regions:
         min: {x: 10, y: -12, z: -45}
         max: {x: 42, y: 18, z: -21}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -22,7 +22,7 @@ regions:
         min: {x: -33, y: 55, z: 83}
         max: {x: -30, y: 57, z: 87}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -30,7 +30,7 @@ regions:
         min: {x: -20, y: 43, z: -37}
         max: {x: -17, y: 47, z: -34}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -38,7 +38,7 @@ regions:
         min: {x: -88, y: -13, z: -91}
         max: {x: 97, y: 185, z: 92}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -46,7 +46,7 @@ regions:
         min: {x: 38, y: 24, z: -34}
         max: {x: 41, y: 26, z: -33}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -54,7 +54,7 @@ regions:
         min: {x: -39, y: 18, z: -22}
         max: {x: 33, y: 65, z: 29}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -62,7 +62,7 @@ regions:
         min: {x: 12, y: -12, z: -35}
         max: {x: 22, y: -6, z: -32}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -70,7 +70,7 @@ regions:
         min: {x: 880, y: -64, z: -197}
         max: {x: 1195, y: 118, z: 63}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
@@ -78,13 +78,13 @@ regions:
         min: {x: 970, y: 31, z: 32}
         max: {x: 975, y: 37, z: 34}
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: cuboid
         priority: 0
     __global__:
         members: {}
-        flags: {}
+        flags: {pvp: allow}
         owners: {}
         type: global
         priority: 0

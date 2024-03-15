@@ -1,17 +1,22 @@
-function thrustATK(a: entity, r: number, d: number) :: boolean:
-	loop {_r} * 2 times:
-		set {_l} to location loop-value /2 blocks in front of {_a}'s head
-		loop all entities in radius 1.5 of location 1 block below {_l}:
-			if damageCheck({_a}, loop-entity) is true:
+function thrustATK(attacker: entity, range: number, damage: number) :: boolean:
+	loop {_range} * 2 times:
+		set {_location} to location loop-value /2 blocks in front of {_attacker}'s head
+		draw 2 of dust using dustOption(gray, 1) at location 0.7 blocks below {_location} with extra 0.02 to all players
+		loop all entities in radius 1.5 of location 1 block below {_location}:
+			if damageCheck({_attacker}, loop-entity) is true:
 				set {_s} to true
-				set {_l} to location 0.8 block in front of {_l}
+				set {_location} to location 0.8 block in front of {_location}
 				exit 3 sections
-	
-	draw 1 of sweep attack at {_l} with extra 0.0 to all players
-	play sound "item.trident.throw" at {_a}
+
+	play sound "block.dispenser.launch" with volume 0.8 with pitch 0.2 at {_attacker}
+
 	if {_s} is true:
-		loop all entities in radius 1.5 of location 1 block below {_l}:
-			if damageCheck({_a}, loop-entity) is true:
-				damage loop-entity by getDamage({_a}, loop-entity, {_d})
-		loop 8 times:
-			draw 1 of electric spark at {_l} with extra 0.8 to all players
+		loop all entities in radius 1.75 of location 1 block below {_location}:
+			if damageCheck({_attacker}, loop-entity) is true:
+				damage loop-entity by getDamage({_attacker}, loop-entity, {_damage})
+		draw 8 of electric spark at {_location} with extra 0.8 to all players
+	draw 1 of sweep attack at location 0.5 block behind and 0.33 block below {_location} with extra 0.0 to all players
+	
+	wait 3 tick
+
+	play sound "item.trident.throw" at {_attacker}
